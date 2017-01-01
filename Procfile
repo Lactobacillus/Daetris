@@ -1,1 +1,1 @@
-web: python 100jum_insang.py
+web: python server.py
