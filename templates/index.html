@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>:: 100점 인생 ::</title>
+
+    <link href = "{{ url_for('static', filename = 'basic.css') }}" rel = "stylesheet" type = "text/css">
+
+    <style>
+    	{font-family: 'Nanum Gothic', serif};
+        a:link     {color:#000000; text-decoration:none}
+        a:visited  {color:#000000; text-decoration:none}
+        a:active   {color:#000000; text-decoration:none}
+        a:hover    {color:#000000; text-decoration:none}
+    </style>
+
+</head>
+<body>
+
+    <div id="mainwrapper">
+      <header>
+        <h1>당신의 가치는 몇점일까요?</h1>
+      </header>
+
+        <form action = '/' method = 'GET' id=form>
+            <input type = 'text' name = 'string' placeholder = '자신의 가치를 입력하세요'/><br><br><br>
+            <input type = 'submit' value = 'CHECK'/>
+        </form>
+        <div id="answer">
+          {% if string != '' %}
+          <h2>{{ string }} 은 {{ score }} 점입니다.</h2>
+          {% endif %}
+
+          {% if msg != '' %}
+          <h2>{{ msg }}</h2>
+          {% endif %}
+        </div>
+
+    </div>
+
+    <div id="spacefill"><br></div>
+
+</body>
+</html>

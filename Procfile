@@ -1,0 +1,1 @@
+web: python 100jum_insang.py

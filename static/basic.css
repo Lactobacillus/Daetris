@@ -1,0 +1,96 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+
+* {
+  font-family: "Nanum-Gothic", sans-serif;\
+  font-style: normal;
+}
+
+body {
+  background-image: url("background2.jpg");
+  background-repeat: no-repeat repeat-y;
+  background-size: cover;
+  overflow: hidden;
+}
+
+#mainwrapper{
+  width: 80%;
+  overflow: auto;
+  margin: auto;
+}
+
+
+header {
+  width: 100%;
+
+}
+
+header h1{
+  text-align: center;
+  padding-top: 200px;
+  padding-bottom: 40px;
+  margin: auto;
+  margin-top: 15px;
+  font-size:45px;
+  color: #F1F1F1;
+  opacity: 0.9;
+}
+
+#form{
+  text-align: center;
+  padding-top: 50px;
+}
+
+input{
+  align-content: center;
+  margin: 0 auto;
+}
+
+input[type="text"]{
+  width: 500px;
+  height: 50px;
+  font-size: 2em;
+  background-color: rgba(255, 0, 0, 0.1);
+  color:#FFFFFF;
+  font-weight:bold;
+  text-align: center;
+  border-color: #0F5935;
+}
+
+input[type="submit"]{
+  display: block;
+  font-size: 30px;
+  font-weight: bolder;
+  border:none;
+  color:#FFFFFF;
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+#answer{
+  color:#FFFFFF;
+  opacity: 0.9;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#spacefill{
+  margin: 100px;
+  text-align: center;
+}
+
+@media screen and (max-width:800px) {
+header h1{
+  font-size: 30px;
+  padding-top: 150px;
+}
+
+input[type="text"]{
+  width: 88%;
+  font-size: 20px;
+}
+
+#answer{
+  font-size: 12px;
+}
+}
