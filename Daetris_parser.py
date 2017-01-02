@@ -113,4 +113,8 @@ def time_to_schedule(text):
 
 	return timeMap
 
+if __name__ == '__main__':
+    
+	print(parse_info())
+	
 #계산은 element wise 덧셈 곱셈으로 

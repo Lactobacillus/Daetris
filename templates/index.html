@@ -2,7 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>:: 100점 인생 ::</title>
+    <title>:: Daetris ::</title>
 
     <link href = "{{ url_for('static', filename = 'basic.css') }}" rel = "stylesheet" type = "text/css">
 
@@ -17,28 +17,24 @@
 </head>
 <body>
 
+    <header>
+      <div id="inHeader">
+        <h1>Daetris</h1>
+      </div>
+    </header>
+
     <div id="mainwrapper">
-      <header>
-        <h1>당신의 가치는 몇점일까요?</h1>
-      </header>
-
-        <form action = '/' method = 'GET' id=form>
-            <input type = 'text' name = 'string' placeholder = '자신의 가치를 입력하세요'/><br><br><br>
-            <input type = 'submit' value = 'CHECK'/>
-        </form>
-        <div id="answer">
-          {% if string != '' %}
-          <h2>{{ string }} 은 {{ score }} 점입니다.</h2>
-          {% endif %}
-
-          {% if msg != '' %}
-          <h2>{{ msg }}</h2>
-          {% endif %}
-        </div>
-
+      <div>
+        <h1>시간표를 만들어봐요~</h1>
+      </div>
     </div>
 
-    <div id="spacefill"><br></div>
+    <footer>
+      <h3>Daetris :: Make Your Class Schedule Coooool</h3>
+      <address>
+        e-mail : <a herf="mailto:cyw314@gmail.com">cyw314@gmail.com</a><br>
+      </address>
+    </footer>
 
 </body>
 </html>
