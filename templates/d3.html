@@ -19,7 +19,7 @@
 
       function makeGraph(){
 
-        var svg = d3.select("button").append("svg").attr("width","1000").attr("height", "1000");
+        var svg = d3.select("body").append("svg").attr("width","1000").attr("height", "1000");
         var selection = svg.selectAll("rect").data([10,20,30,40,50]);
         var elements = selection.enter().append("rect");
         var rect = elements.attr("x", 0).attr("y", function(d, i){ return i * 100}).attr("width", getD).attr("height", getD);
