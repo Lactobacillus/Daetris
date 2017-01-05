@@ -7,7 +7,7 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <link href = "{{ url_for('static', filename = 'basic.css') }}" rel = "stylesheet" type = "text/css">
 
-    <script>
+    <script type="text/javascript">
       function changeColor(id) {
 
         if(document.getElementById(id).className == "cell"){
@@ -22,11 +22,15 @@
 
       function reset(){
 
-        for(var i = 0; i <= 85; i++){
+        for(var i = 1; i <= 8; i++){
 
-          var id = 'cell' + i;
-          console.log(id);
-          document.getElementById(id).className = "cell";
+          for(var j = 1; j<= 5; j++){
+
+            var id = 'cell' + j + i;
+            console.log(id);
+            window.alert(id);
+            document.getElementById(id).className = "cell";
+          }
         }
       }
     </script>
