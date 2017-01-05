@@ -85,7 +85,7 @@ footer address{
   text-align: center;
   color: #FFFFFF;
   background : #005B9A;
-  border-radius: 7px;
+  border-radius: 0px;
 }
 
 #tiles .day td{
@@ -95,7 +95,7 @@ footer address{
   text-align: center;
   color: #FFFFFF;
   background : #005B9A;
-  border-radius: 7px;
+  border-radius: 0px;
 }
 
 #tiles .cell{
@@ -109,7 +109,7 @@ footer address{
   text-align: center;
   color: #FFFFFF;
   background: #74C2E1;
-  border-radius: 7px;
+  border-radius: 0px;
 }
 
 #tiles .cell-sel{
@@ -123,7 +123,7 @@ footer address{
   text-align: center;
   color: #FFFFFF;
   background: #0191C8;
-  border-radius: 7px;
+  border-radius: 0px;
 }
 
 #buttons{
@@ -142,7 +142,7 @@ footer address{
   text-align: center;
   color: #FFFFFF;
   background: #0191C8;
-  border-radius: 7px;
+  border-radius: 0px;
 }
 
 #buttons .reset-button{
@@ -156,7 +156,7 @@ footer address{
   text-align: center;
   color: #FFFFFF;
   background: #0191C8;
-  border-radius: 7px;
+  border-radius: 0px;
 }
 
 @media screen and (max-width:800px) {

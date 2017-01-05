@@ -19,16 +19,16 @@
           document.getElementById(id).className = "cell";
         }
       }
+    </script>
 
+    <script type="text/javascript">
       function reset(){
 
         for(var i = 1; i <= 8; i++){
 
           for(var j = 1; j<= 5; j++){
 
-            var id = 'cell' + j + i;
-            console.log(id);
-            window.alert(id);
+            var id = 'cell' + i + j;
             document.getElementById(id).className = "cell";
           }
         }
