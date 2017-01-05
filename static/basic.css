@@ -79,7 +79,7 @@ footer address{
   height: 70px;
   text-align: center;
   color: #FFFFFF;
-  background : #D53E4F;
+  background : #005B9A;
   border-radius: 7px;
 }
 
@@ -89,17 +89,49 @@ footer address{
   height: 70px;
   text-align: center;
   color: #FFFFFF;
-  background : #D53E4F;
+  background : #005B9A;
   border-radius: 7px;
 }
 
 #tiles .time td{
 
+  margin: 0px;
+  padding: 0px;
+}
+
+#tiles .time input{
+
   width: 120px;
   height: 70px;
+  margin: 0px;
+  padding: 0px;
   text-align: center;
   color: #FFFFFF;
-  background: #F46D43;
+  background: #0191C8;
+  border-radius: 7px;
+}
+
+#tiles .time input:hover{
+
+  width: 120px;
+  height: 70px;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  color: #FFFFFF;
+  background: #0191C8;
+  border-radius: 7px;
+}
+
+#tiles .time input:active{
+
+  width: 120px;
+  height: 70px;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  color: #FFFFFF;
+  background: #0191C8;
   border-radius: 7px;
 }
 
