@@ -5,7 +5,7 @@ from flask import Flask, request, render_template, redirect
 app = Flask(__name__)
 
 @app.route('/', methods = ['GET', 'POST'])
-@app.route('/korea', methods = ['GET', 'POST'])
+@app.route('/index', methods = ['GET', 'POST'])
 def index():
 
 	if request.method == 'GET':
@@ -17,6 +17,21 @@ def index():
 		msg = ''
 
 	return render_template('index.html', string = string, score = score, msg = msg)
+
+@app.route('/draw', methods = ['GET', 'POST'])
+def draw():
+
+	return render_template('index.html')
+
+@app.route('/map', methods = ['GET', 'POST'])
+def map():
+
+	return render_template('index.html')
+
+@app.route('/show', methods = ['POST'])
+def show():
+
+	pass
 
 if __name__ == '__main__':
 

@@ -75,11 +75,6 @@ footer address{
   margin: auto;
 }
 
-#mainwrapper form .submit-button{
-
-  margin: auto;
-}
-
 #tiles th{
 
   width: 120px;
@@ -87,7 +82,6 @@ footer address{
   text-align: center;
   color: #FFFFFF;
   background : #005B9A;
-  border-radius: 7px;
 }
 
 #tiles .day td{
@@ -97,7 +91,6 @@ footer address{
   text-align: center;
   color: #FFFFFF;
   background : #005B9A;
-  border-radius: 7px;
 }
 
 #tiles .cell{
@@ -109,9 +102,8 @@ footer address{
   outline: none;
   padding: 0px;
   text-align: center;
-  color: #FFFFFF;
+  color: #74C2E1;
   background: #74C2E1;
-  border-radius: 7px;
 }
 
 #tiles .cell-sel{
@@ -123,42 +115,36 @@ footer address{
   outline: none;
   padding: 0px;
   text-align: center;
-  color: #FFFFFF;
+  color: #0191C8;
   background: #0191C8;
-  border-radius: 7px;
-}
-
-#buttons{
-
-  margin: auto;
 }
 
 #buttons .control-button{
 
-  width: 120px;
+  width: 300px;
   height: 70px;
   margin: 0px;
   border: none;
   outline: none;
   padding: 0px;
+  font-size: 20px;
   text-align: center;
-  color: #FFFFFF;
-  background: #0191C8;
-  border-radius: 7px;
+  color: #0191C8;
+  background: #FFFFFF;
 }
 
 #buttons .reset-button{
 
-  width: 120px;
+  width: 300px;
   height: 70px;
   margin: 0px;
   border: none;
   outline: none;
   padding: 0px;
+  font-size: 20px;
   text-align: center;
-  color: #FFFFFF;
-  background: #0191C8;
-  border-radius: 7px;
+  color: #0191C8;
+  background: #FFFFFF;
 }
 
 @media screen and (max-width:800px) {
