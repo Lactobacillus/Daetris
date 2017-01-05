@@ -19,11 +19,11 @@
 
       function makeGraph(){
 
-        var svg = d3.select("body").append("svg").attr("width","1000").attr("height", "1000");
+        var svg = d3.select("body").append("svg").attr("width","200").attr("height", "100");
         var selection = svg.selectAll("rect").data([10,20,30,40,50]);
         var elements = selection.enter().append("rect");
-        var rect = elements.attr("x", 0).attr("y", function(d, i){ return i * 100}).attr("width", getD).attr("height", getD);
-        var style = rect.style("opacity", function(d, i){ return d * 0.01});
+        var rect = elements.attr("x", function(d, i){return i * 10}).attr("y", "0").attr("width", "8").attr("height", getD);
+        var style = rect.style("opacity", function(d, i){ return d * 0.02});
       }
     </script>
 
