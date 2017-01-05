@@ -33,14 +33,12 @@ header #in-header{
 header .main-title{
 
   float: left;
-  margin-top: 5px;
   width: 250px;
 }
 
 header .sub-title{
 
   float: left;
-  margin-top: 30px;
   width: 90px;
 }
 
