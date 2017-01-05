@@ -73,6 +73,11 @@ footer address{
   margin: auto;
 }
 
+#mainwrapper form .submit-button{
+
+  margin: auto;
+}
+
 #tiles th{
 
   width: 120px;
@@ -96,6 +101,7 @@ footer address{
 #tiles .time td{
 
   margin: 0px;
+  border: 0px;
   padding: 0px;
 }
 
@@ -104,30 +110,8 @@ footer address{
   width: 120px;
   height: 70px;
   margin: 0px;
-  padding: 0px;
-  text-align: center;
-  color: #FFFFFF;
-  background: #0191C8;
-  border-radius: 7px;
-}
-
-#tiles .time input:hover{
-
-  width: 120px;
-  height: 70px;
-  margin: 0px;
-  padding: 0px;
-  text-align: center;
-  color: #FFFFFF;
-  background: #0191C8;
-  border-radius: 7px;
-}
-
-#tiles .time input:active{
-
-  width: 120px;
-  height: 70px;
-  margin: 0px;
+  border: none;
+  outline: none;
   padding: 0px;
   text-align: center;
   color: #FFFFFF;
