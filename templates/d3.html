@@ -7,22 +7,30 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     
     <script type="text/javascript">
+      function getD(d, i){
+
+        return d
+      }
+
+      function getI(d, i){
+
+        return i
+      }
+
       function makeGraph(){
 
-        var updateSelection = d3.select("body").selectAll("rect").data([10,20,30,40,50]);
-        var rectElements = updateSelection.enter().append("rect");
-        var rectImage = rectElements.attr("x", 0).attr("y", i * 100).attr("width", d).attr("height", d);
+        var selection = d3.select("body").selectAll("rect").data([10,20,30,40,50]);
+        var elements = selection.enter().append("rect");
+        var rect = elements.attr("x", 0).attr("y", getI * 100).attr("width", getD).attr("height", getD);
       }
     </script>
 
 </head>
 <body>
 
+  <button id="make-button" onClick="makeGraph();">makemake</button>
   <svg width="1000" height="1000">
-
   </svg>
-
-  <button value="make" id="make-button" onClick="makeGraph();"></button>
 
 </body>
 </html>
