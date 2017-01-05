@@ -24,11 +24,28 @@ header{
   margin: auto;
 }
 
+header div{
+
+  width: 70%;
+  margin: auto;
+  display: inline;
+}
+
 header h1{
+
   text-align: center;
   margin: auto;
   margin-top: 5px;
   font-size: 45px;
+  color: #FFFFFF;
+}
+
+header h2{
+
+  text-align: center;
+  margin: auto;
+  margin-top: 5px;
+  font-size: 25px;
   color: #FFFFFF;
 }
 
@@ -116,6 +133,19 @@ footer address{
   padding: 0px;
   text-align: center;
   color: #0191C8;
+  background: #0191C8;
+}
+
+#tiles .cell-sel{
+
+  width: 120px;
+  height: 70px;
+  margin: 0px;
+  border: none;
+  outline: none;
+  padding: 0px;
+  text-align: center;
+  color: #FFFFFF;
   background: #0191C8;
 }
 

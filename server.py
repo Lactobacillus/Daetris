@@ -4,8 +4,8 @@ from flask import Flask, request, render_template, redirect
 
 app = Flask(__name__)
 
-@app.route('/', methods = ['GET', 'POST'])
-@app.route('/index', methods = ['GET', 'POST'])
+@app.route('/', methods = ['GET'])
+@app.route('/index', methods = ['GET'])
 def index():
 
 	if request.method == 'GET':
@@ -18,20 +18,20 @@ def index():
 
 	return render_template('index.html', string = string, score = score, msg = msg)
 
-@app.route('/draw', methods = ['GET', 'POST'])
+@app.route('/draw', methods = ['GET'])
 def draw():
 
-	return render_template('index.html')
+	return render_template('draw.html')
 
-@app.route('/map', methods = ['GET', 'POST'])
+@app.route('/map', methods = ['GET'])
 def map():
 
-	return render_template('index.html')
+	return render_template('map.html')
 
-@app.route('/show', methods = ['POST'])
+@app.route('/show', methods = ['GET', 'POST'])
 def show():
 
-	pass
+	return render_template('show.html')
 
 if __name__ == '__main__':
 

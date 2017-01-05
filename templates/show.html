@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>:: Daetris ::</title>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link href = "{{ url_for('static', filename = 'basic.css') }}" rel = "stylesheet" type = "text/css">
+
+    <style>
+    	{font-family: 'Nanum Gothic', serif};
+        a:link     {color:#FFFFFF; text-decoration:none}
+        a:visited  {color:#FFFFFF; text-decoration:none}
+        a:active   {color:#FFFFFF; text-decoration:none}
+        a:hover    {color:#FFFFFF; text-decoration:none}
+    </style>
+
+</head>
+<body>
+
+    <header>
+      <div>
+        <div id="in-header" class='margin-buttons'>
+          <h1 onClick="location.href='/'">Daetris</h1>
+          <h2 onClick="location.href='/draw'">그리기</h2>
+          <h2 onClick="location.href='/map'">지도</h2>
+        </div>
+      </div>
+    </header>
+
+    <div id="mainwrapper">
+      </br>
+      </br>
+      
+      <form id="schedule">
+        <table id="tiles">
+          <tbody>
+            <tr class="day">
+              <th><div></div></th>
+              <td>월</td>
+              <td>화</td>
+              <td>수</td>
+              <td>목</td>
+              <td>금</td>
+            </tr>
+            <tr>
+              <th>1교시</th>
+              <td><input id="c11" type="button" value="" class="cell-result"></td>
+              <td><input id="c12" type="button" value="" class="cell-result"></td>
+              <td><input id="c13" type="button" value="" class="cell-result"></td>
+              <td><input id="c14" type="button" value="" class="cell-result"></td>
+              <td><input id="c15" type="button" value="" class="cell-result"></td>
+            </tr>
+            <tr>
+              <th>2교시</th>
+              <td><input id="c21" type="button" value="" class="cell-result"></td>
+              <td><input id="c22" type="button" value="" class="cell-result"></td>
+              <td><input id="c23" type="button" value="" class="cell-result"></td>
+              <td><input id="c24" type="button" value="" class="cell-result"></td>
+              <td><input id="c25" type="button" value="" class="cell-result"></td>
+            </tr>
+            <tr>
+              <th>3교시</th>
+              <td><input id="c31" type="button" value="" class="cell-result"></td>
+              <td><input id="c32" type="button" value="" class="cell-result"></td>
+              <td><input id="c33" type="button" value="" class="cell-result"></td>
+              <td><input id="c34" type="button" value="" class="cell-result"></td>
+              <td><input id="c35" type="button" value="" class="cell-result"></td>
+            </tr>
+            <tr>
+              <th>4교시</th>
+              <td><input id="c41" type="button" value="" class="cell-result"></td>
+              <td><input id="c42" type="button" value="" class="cell-result"></td>
+              <td><input id="c43" type="button" value="" class="cell-result"></td>
+              <td><input id="c44" type="button" value="" class="cell-result"></td>
+              <td><input id="c45" type="button" value="" class="cell-result"></td>
+            </tr>
+            <tr>
+              <th>5교시</th>
+              <td><input id="c51" type="button" value="" class="cell-result"></td>
+              <td><input id="c52" type="button" value="" class="cell-result"></td>
+              <td><input id="c53" type="button" value="" class="cell-result"></td>
+              <td><input id="c54" type="button" value="" class="cell-result"></td>
+              <td><input id="c55" type="button" value="" class="cell-result"></td>
+            </tr>
+            <tr>
+              <th>6교시</th>
+              <td><input id="c61" type="button" value="" class="cell-result"></td>
+              <td><input id="c62" type="button" value="" class="cell-result"></td>
+              <td><input id="c63" type="button" value="" class="cell-result"></td>
+              <td><input id="c64" type="button" value="" class="cell-result"></td>
+              <td><input id="c65" type="button" value="" class="cell-result"></td>
+            </tr>
+            <tr>
+              <th>7교시</th>
+              <td><input id="c71" type="button" value="" class="cell-result"></td>
+              <td><input id="c72" type="button" value="" class="cell-result"></td>
+              <td><input id="c73" type="button" value="" class="cell-result"></td>
+              <td><input id="c74" type="button" value="" class="cell-result"></td>
+              <td><input id="c75" type="button" value="" class="cell-result"></td>
+            </tr>
+            <tr>
+              <th>8교시</th>
+              <td><input id="c81" type="button" value="" class="cell-result"></td>
+              <td><input id="c82" type="button" value="" class="cell-result"></td>
+              <td><input id="c83" type="button" value="" class="cell-result"></td>
+              <td><input id="c84" type="button" value="" class="cell-result"></td>
+              <td><input id="c85" type="button" value="" class="cell-result"></td>
+            </tr>
+          </tr>
+        </table>
+      </form>
+
+      <div>
+        <div id="buttons" class="margin-buttons">
+          <input type="submit" action="/" form="schedule" value="다시 만들러 가기" class="control-button"/>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <h3>Daetris :: Make Your Class Schedule Coooool</h3>
+      <address>
+        e-mail : <a herf="mailto:cyw314@gmail.com">cyw314@gmail.com</a><br>
+      </address>
+    </footer>
+
+</body>
+</html>
