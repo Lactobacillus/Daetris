@@ -7,6 +7,20 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <link href = "{{ url_for('static', filename = 'basic.css') }}" rel = "stylesheet" type = "text/css">
 
+    <script>
+      function changeColor(id) {
+
+        if(document.getElementById(id).className == "cell"){
+
+          document.getElementById(id).className = "cell-sel";
+        }
+        else{
+
+          document.getElementById(id).className = "cell";
+        }
+      }
+    </script>
+
     <style>
     	{font-family: 'Nanum Gothic', serif};
         a:link     {color:#FFFFFF; text-decoration:none}
@@ -40,69 +54,69 @@
                   <td>목</td>
                   <td>금</td>
                 </tr>
-                <tr class="time">
+                <tr>
                   <th>1교시</th>
-                  <td><input type="button" value="월 1교시"></button></td>
-                  <td><input type="button" value="화 1교시"></button></td>
-                  <td><input type="button" value="수 1교시"></button></td>
-                  <td><input type="button" value="목 1교시"></button></td>
-                  <td><input type="button" value="금 1교시"></button></td>
+                  <td><input id="cell11" type="button" value="월 1교시" class="cell" onClick="changeColor('cell11');"></button></td>
+                  <td><input id="cell12" type="button" value="화 1교시" class="cell" onClick="changeColor('cell12');"></button></td>
+                  <td><input id="cell13" type="button" value="수 1교시" class="cell" onClick="changeColor('cell13');"></button></td>
+                  <td><input id="cell14" type="button" value="목 1교시" class="cell" onClick="changeColor('cell14');"></button></td>
+                  <td><input id="cell15" type="button" value="금 1교시" class="cell" onClick="changeColor('cell15');"></button></td>
                 </tr>
-                <tr class="time">
+                <tr>
                   <th>2교시</th>
-                  <td><input type="button" value="월 2교시"></button></td>
-                  <td><input type="button" value="화 2교시"></button></td>
-                  <td><input type="button" value="수 2교시"></button></td>
-                  <td><input type="button" value="목 2교시"></button></td>
-                  <td><input type="button" value="금 2교시"></button></td>
+                  <td><input id="cell21" type="button" value="월 2교시" class="cell" onClick="changeColor('cell21');"></button></td>
+                  <td><input id="cell22" type="button" value="화 2교시" class="cell" onClick="changeColor('cell22');"></button></td>
+                  <td><input id="cell23" type="button" value="수 2교시" class="cell" onClick="changeColor('cell23');"></button></td>
+                  <td><input id="cell24" type="button" value="목 2교시" class="cell" onClick="changeColor('cell24');"></button></td>
+                  <td><input id="cell25" type="button" value="금 2교시" class="cell" onClick="changeColor('cell25');"></button></td>
                 </tr>
-                <tr class="time">
+                <tr>
                   <th>3교시</th>
-                  <td><input type="button" value="월 3교시"></button></td>
-                  <td><input type="button" value="화 3교시"></button></td>
-                  <td><input type="button" value="수 3교시"></button></td>
-                  <td><input type="button" value="목 3교시"></button></td>
-                  <td><input type="button" value="금 3교시"></button></td>
+                  <td><input id="cell31" type="button" value="월 3교시" class="cell" onClick="changeColor('cell31');"></button></td>
+                  <td><input id="cell32" type="button" value="화 3교시" class="cell" onClick="changeColor('cell32');"></button></td>
+                  <td><input id="cell33" type="button" value="수 3교시" class="cell" onClick="changeColor('cell33');"></button></td>
+                  <td><input id="cell34" type="button" value="목 3교시" class="cell" onClick="changeColor('cell34');"></button></td>
+                  <td><input id="cell35" type="button" value="금 3교시" class="cell" onClick="changeColor('cell35');"></button></td>
                 </tr>
-                <tr class="time">
+                <tr>
                   <th>4교시</th>
-                  <td><input type="button" value="월 4교시"></button></td>
-                  <td><input type="button" value="화 4교시"></button></td>
-                  <td><input type="button" value="수 4교시"></button></td>
-                  <td><input type="button" value="목 4교시"></button></td>
-                  <td><input type="button" value="금 4교시"></button></td>
+                  <td><input id="cell41" type="button" value="월 4교시" class="cell" onClick="changeColor('cell41');"></button></td>
+                  <td><input id="cell42" type="button" value="화 4교시" class="cell" onClick="changeColor('cell42');"></button></td>
+                  <td><input id="cell43" type="button" value="수 4교시" class="cell" onClick="changeColor('cell43');"></button></td>
+                  <td><input id="cell44" type="button" value="목 4교시" class="cell" onClick="changeColor('cell44');"></button></td>
+                  <td><input id="cell45" type="button" value="금 4교시" class="cell" onClick="changeColor('cell45');"></button></td>
                 </tr>
-                <tr class="time">
+                <tr>
                   <th>5교시</th>
-                  <td><input type="button" value="월 5교시"></button></td>
-                  <td><input type="button" value="화 5교시"></button></td>
-                  <td><input type="button" value="수 5교시"></button></td>
-                  <td><input type="button" value="목 5교시"></button></td>
-                  <td><input type="button" value="금 5교시"></button></td>
+                  <td><input id="cell51" type="button" value="월 5교시" class="cell" onClick="changeColor('cell51');"></button></td>
+                  <td><input id="cell52" type="button" value="화 5교시" class="cell" onClick="changeColor('cell52');"></button></td>
+                  <td><input id="cell53" type="button" value="수 5교시" class="cell" onClick="changeColor('cell53');"></button></td>
+                  <td><input id="cell54" type="button" value="목 5교시" class="cell" onClick="changeColor('cell54');"></button></td>
+                  <td><input id="cell55" type="button" value="금 5교시" class="cell" onClick="changeColor('cell55');"></button></td>
                 </tr>
-                <tr class="time">
+                <tr>
                   <th>6교시</th>
-                  <td><input type="button" value="월 6교시"></button></td>
-                  <td><input type="button" value="화 6교시"></button></td>
-                  <td><input type="button" value="수 6교시"></button></td>
-                  <td><input type="button" value="목 6교시"></button></td>
-                  <td><input type="button" value="금 6교시"></button></td>
+                  <td><input id="cell61" type="button" value="월 6교시" class="cell" onClick="changeColor('cell61');"></button></td>
+                  <td><input id="cell62" type="button" value="화 6교시" class="cell" onClick="changeColor('cell62');"></button></td>
+                  <td><input id="cell63" type="button" value="수 6교시" class="cell" onClick="changeColor('cell63');"></button></td>
+                  <td><input id="cell64" type="button" value="목 6교시" class="cell" onClick="changeColor('cell64');"></button></td>
+                  <td><input id="cell65" type="button" value="금 6교시" class="cell" onClick="changeColor('cell65');"></button></td>
                 </tr>
-                <tr class="time">
+                <tr>
                   <th>7교시</th>
-                  <td><input type="button" value="월 7교시"></button></td>
-                  <td><input type="button" value="화 7교시"></button></td>
-                  <td><input type="button" value="수 7교시"></button></td>
-                  <td><input type="button" value="목 7교시"></button></td>
-                  <td><input type="button" value="금 7교시"></button></td>
+                  <td><input id="cell71" type="button" value="월 7교시" class="cell" onClick="changeColor('cell71');"></button></td>
+                  <td><input id="cell72" type="button" value="화 7교시" class="cell" onClick="changeColor('cell72');"></button></td>
+                  <td><input id="cell73" type="button" value="수 7교시" class="cell" onClick="changeColor('cell73');"></button></td>
+                  <td><input id="cell74" type="button" value="목 7교시" class="cell" onClick="changeColor('cell74');"></button></td>
+                  <td><input id="cell75" type="button" value="금 7교시" class="cell" onClick="changeColor('cell75');"></button></td>
                 </tr>
-                <tr class="time">
+                <tr>
                   <th>8교시</th>
-                  <td><input type="button" value="월 8교시"></button></td>
-                  <td><input type="button" value="화 8교시"></button></td>
-                  <td><input type="button" value="수 8교시"></button></td>
-                  <td><input type="button" value="목 8교시"></button></td>
-                  <td><input type="button" value="금 8교시"></button></td>
+                  <td><input id="cell81" type="button" value="월 8교시" class="cell" onClick="changeColor('cell81');"></button></td>
+                  <td><input id="cell82" type="button" value="화 8교시" class="cell" onClick="changeColor('cell82');"></button></td>
+                  <td><input id="cell83" type="button" value="수 8교시" class="cell" onClick="changeColor('cell83');"></button></td>
+                  <td><input id="cell84" type="button" value="목 8교시" class="cell" onClick="changeColor('cell84');"></button></td>
+                  <td><input id="cell85" type="button" value="금 8교시" class="cell" onClick="changeColor('cell85');"></button></td>
                 </tr>
               </tr>
             </table>

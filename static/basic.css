@@ -98,14 +98,21 @@ footer address{
   border-radius: 7px;
 }
 
-#tiles .time td{
+#tiles .cell{
 
+  width: 120px;
+  height: 70px;
   margin: 0px;
-  border: 0px;
+  border: none;
+  outline: none;
   padding: 0px;
+  text-align: center;
+  color: #FFFFFF;
+  background: #74C2E1;
+  border-radius: 7px;
 }
 
-#tiles .time input{
+#tiles .cell-sel{
 
   width: 120px;
   height: 70px;
