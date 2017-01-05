@@ -33,6 +33,11 @@ def show():
 
 	return render_template('show.html')
 
+@app.route('/about', methods = ['GET'])
+def about():
+
+	return render_template('about.html')
+
 if __name__ == '__main__':
 
 	port = int(os.environ.get('PORT', 5000))

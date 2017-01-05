@@ -7,34 +7,6 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <link href = "{{ url_for('static', filename = 'basic.css') }}" rel = "stylesheet" type = "text/css">
 
-    <script type="text/javascript">
-      function toggle(id) {
-
-        if(document.getElementById(id).className == "cell"){
-
-          document.getElementById(id).className = "cell-sel";
-          document.getElementById(id).value = "1";
-        }
-        else{
-
-          document.getElementById(id).className = "cell";
-          document.getElementById(id).value = "0";
-        }
-      }
-
-      function reset(){
-
-        for(var i = 1; i <= 8; i++){
-
-          for(var j = 1; j<= 5; j++){
-
-            var id = 'c' + i + j;
-            document.getElementById(id).className = "cell";
-          }
-        }
-      }
-    </script>
-
     <style>
       {font-family: 'Nanum Gothic', serif};
         a:link     {color:#FFFFFF; text-decoration:none}
@@ -58,13 +30,7 @@
     </header>
 
     <div id="mainwrapper">
-      지도에서 건물을 선택하면 그 건물만 다니는 시간표를 만들자
-      <div>
-        <div id="buttons" class="margin-buttons">
-          <input type="submit" action="/" form="schedule" value="시간표 만들기" class="control-button"/>
-          <input type="button" onClick="reset();" value="모두 지워버리기" class="reset-button">
-        </div>
-      </div>
+      설명을 대충 써놓자
     </div>
 
     <footer>

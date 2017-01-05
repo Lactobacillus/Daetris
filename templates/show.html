@@ -7,8 +7,36 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <link href = "{{ url_for('static', filename = 'basic.css') }}" rel = "stylesheet" type = "text/css">
 
+    <script type="text/javascript">
+      function toggle(id) {
+
+        if(document.getElementById(id).className == "cell"){
+
+          document.getElementById(id).className = "cell-sel";
+          document.getElementById(id).value = "1";
+        }
+        else{
+
+          document.getElementById(id).className = "cell";
+          document.getElementById(id).value = "0";
+        }
+      }
+
+      function reset(){
+
+        for(var i = 1; i <= 8; i++){
+
+          for(var j = 1; j<= 5; j++){
+
+            var id = 'c' + i + j;
+            document.getElementById(id).className = "cell";
+          }
+        }
+      }
+    </script>
+
     <style>
-    	{font-family: 'Nanum Gothic', serif};
+      {font-family: 'Nanum Gothic', serif};
         a:link     {color:#FFFFFF; text-decoration:none}
         a:visited  {color:#FFFFFF; text-decoration:none}
         a:active   {color:#FFFFFF; text-decoration:none}
@@ -21,9 +49,10 @@
     <header>
       <div>
         <div id="in-header" class='margin-buttons'>
-          <h1 onClick="location.href='/'">Daetris</h1>
-          <h2 onClick="location.href='/draw'">그리기</h2>
-          <h2 onClick="location.href='/map'">지도</h2>
+          <h1 onClick="location.href='/';">Daetris</h1>
+          <h2 onClick="location.href='/draw';">그리기</h2>
+          <h2 onClick="location.href='/map';">지도</h2>
+          <h2 onClick="location.href='/about';">about</h2>
         </div>
       </div>
     </header>
@@ -45,67 +74,67 @@
             </tr>
             <tr>
               <th>1교시</th>
-              <td><input id="c11" type="button" value="" class="cell-result"></td>
-              <td><input id="c12" type="button" value="" class="cell-result"></td>
-              <td><input id="c13" type="button" value="" class="cell-result"></td>
-              <td><input id="c14" type="button" value="" class="cell-result"></td>
-              <td><input id="c15" type="button" value="" class="cell-result"></td>
+              <td><input id="c11" type="button" value="0" class="cell"></td>
+              <td><input id="c12" type="button" value="0" class="cell"></td>
+              <td><input id="c13" type="button" value="0" class="cell"></td>
+              <td><input id="c14" type="button" value="0" class="cell"></td>
+              <td><input id="c15" type="button" value="0" class="cell"></td>
             </tr>
             <tr>
               <th>2교시</th>
-              <td><input id="c21" type="button" value="" class="cell-result"></td>
-              <td><input id="c22" type="button" value="" class="cell-result"></td>
-              <td><input id="c23" type="button" value="" class="cell-result"></td>
-              <td><input id="c24" type="button" value="" class="cell-result"></td>
-              <td><input id="c25" type="button" value="" class="cell-result"></td>
+              <td><input id="c21" type="button" value="0" class="cell"></td>
+              <td><input id="c22" type="button" value="0" class="cell"></td>
+              <td><input id="c23" type="button" value="0" class="cell"></td>
+              <td><input id="c24" type="button" value="0" class="cell"></td>
+              <td><input id="c25" type="button" value="0" class="cell"></td>
             </tr>
             <tr>
               <th>3교시</th>
-              <td><input id="c31" type="button" value="" class="cell-result"></td>
-              <td><input id="c32" type="button" value="" class="cell-result"></td>
-              <td><input id="c33" type="button" value="" class="cell-result"></td>
-              <td><input id="c34" type="button" value="" class="cell-result"></td>
-              <td><input id="c35" type="button" value="" class="cell-result"></td>
+              <td><input id="c31" type="button" value="0" class="cell"></td>
+              <td><input id="c32" type="button" value="0" class="cell"></td>
+              <td><input id="c33" type="button" value="0" class="cell"></td>
+              <td><input id="c34" type="button" value="0" class="cell"></td>
+              <td><input id="c35" type="button" value="0" class="cell"></td>
             </tr>
             <tr>
               <th>4교시</th>
-              <td><input id="c41" type="button" value="" class="cell-result"></td>
-              <td><input id="c42" type="button" value="" class="cell-result"></td>
-              <td><input id="c43" type="button" value="" class="cell-result"></td>
-              <td><input id="c44" type="button" value="" class="cell-result"></td>
-              <td><input id="c45" type="button" value="" class="cell-result"></td>
+              <td><input id="c41" type="button" value="0" class="cell"></td>
+              <td><input id="c42" type="button" value="0" class="cell"></td>
+              <td><input id="c43" type="button" value="0" class="cell"></td>
+              <td><input id="c44" type="button" value="0" class="cell"></td>
+              <td><input id="c45" type="button" value="0" class="cell"></td>
             </tr>
             <tr>
               <th>5교시</th>
-              <td><input id="c51" type="button" value="" class="cell-result"></td>
-              <td><input id="c52" type="button" value="" class="cell-result"></td>
-              <td><input id="c53" type="button" value="" class="cell-result"></td>
-              <td><input id="c54" type="button" value="" class="cell-result"></td>
-              <td><input id="c55" type="button" value="" class="cell-result"></td>
+              <td><input id="c51" type="button" value="0" class="cell"></td>
+              <td><input id="c52" type="button" value="0" class="cell"></td>
+              <td><input id="c53" type="button" value="0" class="cell"></td>
+              <td><input id="c54" type="button" value="0" class="cell"></td>
+              <td><input id="c55" type="button" value="0" class="cell"></td>
             </tr>
             <tr>
               <th>6교시</th>
-              <td><input id="c61" type="button" value="" class="cell-result"></td>
-              <td><input id="c62" type="button" value="" class="cell-result"></td>
-              <td><input id="c63" type="button" value="" class="cell-result"></td>
-              <td><input id="c64" type="button" value="" class="cell-result"></td>
-              <td><input id="c65" type="button" value="" class="cell-result"></td>
+              <td><input id="c61" type="button" value="0" class="cell"></td>
+              <td><input id="c62" type="button" value="0" class="cell"></td>
+              <td><input id="c63" type="button" value="0" class="cell"></td>
+              <td><input id="c64" type="button" value="0" class="cell"></td>
+              <td><input id="c65" type="button" value="0" class="cell"></td>
             </tr>
             <tr>
               <th>7교시</th>
-              <td><input id="c71" type="button" value="" class="cell-result"></td>
-              <td><input id="c72" type="button" value="" class="cell-result"></td>
-              <td><input id="c73" type="button" value="" class="cell-result"></td>
-              <td><input id="c74" type="button" value="" class="cell-result"></td>
-              <td><input id="c75" type="button" value="" class="cell-result"></td>
+              <td><input id="c71" type="button" value="0" class="cell"></td>
+              <td><input id="c72" type="button" value="0" class="cell"></td>
+              <td><input id="c73" type="button" value="0" class="cell"></td>
+              <td><input id="c74" type="button" value="0" class="cell"></td>
+              <td><input id="c75" type="button" value="0" class="cell"></td>
             </tr>
             <tr>
               <th>8교시</th>
-              <td><input id="c81" type="button" value="" class="cell-result"></td>
-              <td><input id="c82" type="button" value="" class="cell-result"></td>
-              <td><input id="c83" type="button" value="" class="cell-result"></td>
-              <td><input id="c84" type="button" value="" class="cell-result"></td>
-              <td><input id="c85" type="button" value="" class="cell-result"></td>
+              <td><input id="c81" type="button" value="0" class="cell"></td>
+              <td><input id="c82" type="button" value="0" class="cell"></td>
+              <td><input id="c83" type="button" value="0" class="cell"></td>
+              <td><input id="c84" type="button" value="0" class="cell"></td>
+              <td><input id="c85" type="button" value="0" class="cell"></td>
             </tr>
           </tr>
         </table>
