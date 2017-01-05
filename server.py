@@ -14,14 +14,10 @@ def index():
 		string = ''
 		score = ''
 		msg = ''
-	
-		if 'HEROESOFTHESTORM' in string.upper().replace(' ', ''):
-
-			return redirect('http://kr.battle.net/heroes/ko/', code = 302)
 
 	return render_template('index.html', string = string, score = score, msg = msg)
 
 if __name__ == '__main__':
 
 	port = int(os.environ.get('PORT', 5000))
-	app.run(host = '0.0.0.0', port = port)
+	app.run(host = '0.0.0.0', port = port, debug = True)

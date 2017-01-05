@@ -1,7 +1,6 @@
 @charset "UTF-8";
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
-
 * {
   font-family: "Nanum-Gothic", sans-serif;\
   font-style: normal;
@@ -18,7 +17,7 @@ body {
 header{
 
   width: 100%;
-  background-color: #00bcd4;
+  background-color: #00BCD4;
   padding-top: 0px;
   padding-bottom: 10px;
   overflow: hidden;
@@ -30,7 +29,7 @@ header h1{
   margin: auto;
   margin-top: 5px;
   font-size: 45px;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 footer{
@@ -49,7 +48,7 @@ footer h3{
   margin: auto;
   margin-top: 5px;
   font-size: 20px;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 footer address{
@@ -59,21 +58,54 @@ footer address{
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 15px;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 #mainwrapper{
-  width: 80%;
+
+  width: 70%;
   overflow: auto;
   margin: auto;
 }
 
-@media screen and (max-width:800px) {
-header h1{
-  font-size: 30px;
-  padding-top: 150px;
+#mainwrapper table{
+
+  margin: auto;
 }
 
-#answer{
-  font-size: 12px;
+#tiles th{
+
+  width: 120px;
+  height: 70px;
+  text-align: center;
+  color: #FFFFFF;
+  background : #D53E4F;
+  border-radius: 7px;
+}
+
+#tiles .day td{
+
+  width: 120px;
+  height: 70px;
+  text-align: center;
+  color: #FFFFFF;
+  background : #D53E4F;
+  border-radius: 7px;
+}
+
+#tiles .time td{
+
+  width: 120px;
+  height: 70px;
+  text-align: center;
+  color: #FFFFFF;
+  background: #F46D43;
+  border-radius: 7px;
+}
+
+@media screen and (max-width:800px) {
+header h1{
+
+  font-size: 30px;
+  padding-top: 150px;
 }
