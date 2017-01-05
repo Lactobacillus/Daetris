@@ -54,8 +54,14 @@ def traffic():
 
 	return str(count[0])
 
+@app.route('/d3', methods = ['GET'])
+def d3():
+
+	return render_template('d3.html')
+
 if __name__ == '__main__':
 
 	count = [0]
+	#debug 모드 없애기#############################################
 	port = int(os.environ.get('PORT', 5000))
 	app.run(host = '0.0.0.0', port = port, debug = True)
