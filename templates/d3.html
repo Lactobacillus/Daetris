@@ -7,22 +7,33 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     
     <script type="text/javascript">
+      function makeData(n){
+
+        var arr = [];
+
+        for(var i = 0; i < n; j++){
+
+          arr.push(Math.floor((Math.random() * 50) + 1));
+        }
+
+        return arr
+      }
       function getD(d, i){
 
-        return d
+        return d;
       }
 
       function getI(d, i){
 
-        return i
+        return i;
       }
 
       function makeGraph(){
 
         var svg = d3.select("body").append("svg").attr("width","200").attr("height", "100");
-        var selection = svg.selectAll("rect").data([10,20,30,40,50]);
+        var selection = svg.selectAll("rect").data(makeData(5));
         var elements = selection.enter().append("rect");
-        var rect = elements.attr("x", function(d, i){return i * 10}).attr("y", "0").attr("width", "8").attr("height", getD);
+        var rect = elements.attr("x", function(d, i){return i * 10;}).attr("y", function(d, i){return 50 - d;}).attr("width", "8").attr("height", getD);
         var style = rect.style("opacity", function(d, i){ return d * 0.02});
       }
     </script>
