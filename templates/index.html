@@ -19,6 +19,16 @@
           document.getElementById(id).className = "cell";
         }
       }
+
+      function reset(){
+
+        for(var i = 0; i <= 85; i++){
+
+          var id = 'cell' + i;
+          console.log(id);
+          document.getElementById(id).className = "cell";
+        }
+      }
     </script>
 
     <style>
@@ -122,8 +132,9 @@
             </table>
           </div>
           </br>
-          <div class="submit-button">
-            <input type="submit" value="시간표 만들기" >
+          <div id="buttons">
+            <input type="submit" value="시간표 만들기" class="control-button" onClick="">
+            <input type="button" value="모두 지워버리기" class="reset-button" onClick="reset();">
           </div>
         </form>
       </div>

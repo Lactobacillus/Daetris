@@ -126,6 +126,39 @@ footer address{
   border-radius: 7px;
 }
 
+#buttons{
+
+  margin: auto;
+}
+
+#buttons .control-button{
+
+  width: 120px;
+  height: 70px;
+  margin: 0px;
+  border: none;
+  outline: none;
+  padding: 0px;
+  text-align: center;
+  color: #FFFFFF;
+  background: #0191C8;
+  border-radius: 7px;
+}
+
+#buttons .reset-button{
+
+  width: 120px;
+  height: 70px;
+  margin: 0px;
+  border: none;
+  outline: none;
+  padding: 0px;
+  text-align: center;
+  color: #FFFFFF;
+  background: #0191C8;
+  border-radius: 7px;
+}
+
 @media screen and (max-width:800px) {
 header h1{
 
