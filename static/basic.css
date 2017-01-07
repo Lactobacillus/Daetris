@@ -106,13 +106,29 @@ footer address{
   margin: auto;
 }
 
-#tiles th{
+#tiles .day .label{
 
   width: 120px;
   height: 70px;
+  margin: 0px;
+  border: none;
+  outline: none;
+  padding: 0px;
   text-align: center;
   color: #FFFFFF;
+  background : #005B9A;
+}
+
+#tiles th .label{
+
+  width: 120px;
+  height: 70px;
+  margin: 0px;
+  border: none;
+  outline: none;
   padding: 0px;
+  text-align: center;
+  color: #FFFFFF;
   background : #005B9A;
 }
 
@@ -120,9 +136,12 @@ footer address{
 
   width: 120px;
   height: 70px;
+  margin: 0px;
+  border: none;
+  outline: none;
+  padding: 0px;
   text-align: center;
   color: #FFFFFF;
-  padding: 0px;
   background : #005B9A;
 }
 
