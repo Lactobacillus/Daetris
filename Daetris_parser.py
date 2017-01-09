@@ -1,5 +1,6 @@
 import os
 import sys
+import unicodedata
 import urllib.request
 from bs4 import BeautifulSoup
 import Daetris_functions as functions

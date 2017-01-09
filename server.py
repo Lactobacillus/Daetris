@@ -40,7 +40,26 @@ def show():
 
 	count[0] += 1
 
-	return render_template('show.html')
+	if request.method == 'POST':
+		
+		if asdf:
+
+			# draw 에서 왔을 때
+			return render_template('show.html')
+			return str(request.form['c11'])
+
+		elif sadf:
+
+			# map 에서 왔을 때
+			pass
+
+		else:
+
+			return render_template('draw.html')
+
+	else:
+
+		return render_template('draw.html')
 
 @app.route('/about', methods = ['GET'])
 def about():
@@ -52,7 +71,7 @@ def about():
 @app.route('/traffic', methods = ['GET'])
 def traffic():
 
-	return str(count[0])
+	return '모든 page 에 대한 접근 : ' + str(count[0]) + ' 회'
 
 @app.route('/d3', methods = ['GET'])
 def d3():
