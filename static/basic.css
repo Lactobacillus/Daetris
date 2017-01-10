@@ -106,6 +106,13 @@ footer address{
   margin: auto;
 }
 
+#show-count h1{
+
+  text-align: center;
+  margin: auto;
+  font-size: 40px;
+}
+
 #tiles .day .label{
 
   width: 120px;

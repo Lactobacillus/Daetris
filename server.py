@@ -1,15 +1,21 @@
 import os
 import pickle
-from flask import Flask, request, render_template, redirect
+from flask import Flask, request, render_template
 
 count = 0
+count_show = 2787
 app = Flask(__name__)
+
+with open('2016-2.pickle', 'rb') as f:
+
+	lectures = pickle.load(f)
 
 @app.route('/', methods = ['GET'])
 @app.route('/index', methods = ['GET'])
 def index():
 
 	global count
+	global count_show
 	count += 1
 
 	if request.method == 'GET':
@@ -20,7 +26,7 @@ def index():
 		score = ''
 		msg = ''
 
-	return render_template('index.html', string = string, score = score, msg = msg)
+	return render_template('index.html', cnt = str(count_show))
 
 @app.route('/draw', methods = ['GET'])
 def draw():
@@ -42,7 +48,9 @@ def map():
 def show():
 
 	global count
+	global count_show
 	count += 1
+	count_show += 1
 
 	if request.method == 'POST':
 		
@@ -84,6 +92,13 @@ def traffic():
 def d3():
 
 	return render_template('d3.html')
+
+@app.route('/test', methods = ['GET'])
+def test():
+
+	global lectures
+
+	return render_template('test.html', lec = lectures)
 
 if __name__ == '__main__':
 
