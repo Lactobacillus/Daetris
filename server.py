@@ -76,7 +76,9 @@ def about():
 @app.route('/traffic', methods = ['GET'])
 def traffic():
 
-	return '모든 page 에 대한 접근 : ' + str(count[0]) + ' 회'
+	global count
+
+	return '모든 page 에 대한 접근 : ' + str(count) + ' 회'
 
 @app.route('/d3', methods = ['GET'])
 def d3():
