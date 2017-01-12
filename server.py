@@ -6,7 +6,7 @@ count = 0
 count_show = 2787
 app = Flask(__name__)
 
-with open('2016-2.pickle', 'rb') as f:
+with open('2017-1.pickle', 'rb') as f:
 
 	lectures = pickle.load(f)
 

@@ -13,14 +13,14 @@
 
         for(var i = 0; i < n; i++){
 
-          arr.push(Math.floor((Math.random() * 50) + 1));
+          arr.push({"random" : Math.floor((Math.random() * 50) + 1), "asdf" : i});
         }
 
         return arr
       }
       function getD(d, i){
 
-        return d;
+        return d.random;
       }
 
       function getI(d, i){
@@ -33,8 +33,8 @@
         var svg = d3.select("body").append("svg").attr("width","200").attr("height", "100");
         var selection = svg.selectAll("rect").data(makeData(5));
         var elements = selection.enter().append("rect");
-        var rect = elements.attr("x", function(d, i){return i * 10;}).attr("y", function(d, i){return 50 - d;}).attr("width", "8").attr("height", getD);
-        var style = rect.style("opacity", function(d, i){ return d * 0.02});
+        var rect = elements.attr("x", function(d, i){return i * 10;}).attr("y", function(d, i){return 50 - d.random;}).attr("width", "8").attr("height", getD);
+        var style = rect.style("opacity", function(d, i){ return d.random * 0.02});
       }
     </script>
 
