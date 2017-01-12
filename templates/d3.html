@@ -5,6 +5,7 @@
     <title>:: D3 test ::</title>
 
     <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="{{ url_for('static', filename = '2017-1.js') }}"></script>
     
     <script type="text/javascript">
       function makeData(n){
@@ -16,7 +17,7 @@
           arr.push({"random" : Math.floor((Math.random() * 50) + 1), "asdf" : i});
         }
 
-        return arr
+        return arr;
       }
       function getD(d, i){
 
@@ -36,12 +37,93 @@
         var rect = elements.attr("x", function(d, i){return i * 10;}).attr("y", function(d, i){return 50 - d.random;}).attr("width", "8").attr("height", getD);
         var style = rect.style("opacity", function(d, i){ return d.random * 0.02});
       }
+
+      var checked = {"L-P":0, "현차관":0, "정보통신관":0, "미래융합":0, "과도관":0};
+
+      function changeStatus(place){
+
+        if(checked[place] == 0){
+
+          checked[place] = 1;
+        }
+        else{
+
+          checked[place] = 0;
+        }
+      }
+
+      function countPlace(place){
+
+        var cnt = [0,0,0,0,0,0,0,0];
+
+        for(var i in data){
+
+          for(var j in data[i]["room"]){
+
+            if(data[i]["room"][j].includes(place)){
+
+              for(var k = 1; k < 9; k++){
+
+                for(var l in data[i]["time"]){
+
+                  if(data[i]["time"][l].includes(k)){
+
+                    cnt[k - 1] += 1;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        return cnt;
+      }
+
+      function scaler(data){
+
+        var scale = d3.scaleLinear().domain([d3.min(data), d3.max(data)]).range([0,300]);
+        var result = [];
+
+        for(var i in data){
+
+          result[i] = scale(data[i]);
+        }
+
+        return result;
+      }
+
+      function drawGraph(){
+
+        var svg = d3.select("body").append("svg").attr("width","800").attr("height", "300").attr("id","svg");
+
+        var LP = d3.select("#svg").append("g").attr("id","L-P");
+        var LP_sel = LP.selectAll("rect").data(scaler(countPlace('L-P')));
+
+        console.log(scaler(countPlace('L-P')));
+        var LP_elem = LP_sel.enter().append("rect");
+        var LP_rect = LP_elem.attr("x", function(d, i){ return i * 80;}).attr("y", function(d, i){ return 300 - d;}).attr("width", "75").attr("height", function(d, i){ return d;});
+        var LP_style = LP_rect.style("fill", "#123456");
+
+        var HC = d3.select("#svg").append("g").attr("id","현차관");
+        var HC_sel = HC.selectAll("rect").data(countPlace('현차관'));
+        var HC_elem = HC_sel.enter().append("rect");
+        var HC_rect = HC_elem.attr("x", function(d, i){ return i * 80;}).attr("y", function(d, i){ return 300 - d;}).attr("width", "75").attr("height", function(d, i){ return d*0});
+        var HC_style = HC_rect.style("fill", "#654321");
+
+
+      }
     </script>
 
 </head>
 <body>
 
   <button id="make-button" onClick="makeGraph();">makemake</button>
-
+  </br>
+  <button id="L-P" onClick="changeStatus('L-P'); drawGraph();">L-P</button>
+  <button id="현차관" onClick="changeStatus('현차관'); drawGraph();">현차관</button>
+  <button id="정보통신관" onClick="changeStatus('정보통신관'); drawGraph();">정보통신관</button>
+  <button id="미래융합" onClick="changeStatus('미래융합'); drawGraph();">미래융합</button>
+  <button id="과도관" onClick="changeStatus('과도관'); drawGraph();">과도관</button>
+  </br>
 </body>
 </html>
