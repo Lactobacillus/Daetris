@@ -29,6 +29,16 @@ def index():
 
 	return render_template('index.html', cnt = str(count_show))
 
+@app.route('/random', methods = ['GET'])
+def random():
+
+	global count
+	count += 1
+
+	#ASDFSADDSAFASDFASD 아직 안짬
+
+	return render_template('draw.html')
+
 @app.route('/draw', methods = ['GET'])
 def draw():
 
