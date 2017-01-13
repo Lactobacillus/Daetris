@@ -4,6 +4,10 @@
 * {
   font-family: "Nanum-Gothic", sans-serif;\
   font-style: normal;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body {
@@ -163,6 +167,8 @@ footer address{
   text-align: center;
   color: #74C2E1;
   background: #74C2E1;
+  cursor:pointer;
+
 }
 
 #tiles .cell-sel{
@@ -176,6 +182,8 @@ footer address{
   text-align: center;
   color: #0191C8;
   background: #0191C8;
+  cursor:pointer;
+
 }
 
 #tiles .cell-result{

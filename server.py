@@ -63,6 +63,19 @@ def randomLecture():
 				sel_lectures.append(lec)
 				point = point + int(lec['hakjum'])
 
+				for time in lec['time']:
+
+					if int(time[1:]) > 8 or time[0] == '토':
+
+						sel_lectures.pop()
+						point = point - int(lec['hakjum'])
+
+						break
+
+			else:
+
+				pass
+
 	return render_template('random.html', selected = str(sel_lectures), hakjum = point)
 
 @app.route('/draw', methods = ['GET'])

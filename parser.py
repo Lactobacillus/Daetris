@@ -80,18 +80,22 @@ def get_lectures(htmls):
 
 				try:
 
-					lecture['haksu'] = cols[1].text.replace('\n', '')
-					lecture['bunban'] = cols[2].text
-					lecture['name'] = unicodedata.normalize('NFKC', cols[4].text.replace('\t', '').replace('\n', '').replace('\r', ''))[:-1]
-					lecture['professor'] = cols[5].text
-					lecture['hakjum'] = cols[6].text[2]
-					lecture['time-room'] = cols[7].text
-					lecture['time'] = get_time(cols[7].text)
-					lecture['room'] = get_room(cols[7].text)
+					if '토' in cols[7].text:
 
-					print(lecture)
+						pass
 
-					lectures.append(lecture)
+					else:
+
+						lecture['haksu'] = cols[1].text.replace('\n', '')
+						lecture['bunban'] = cols[2].text
+						lecture['name'] = unicodedata.normalize('NFKC', cols[4].text.replace('\t', '').replace('\n', '').replace('\r', ''))[:-1]
+						lecture['professor'] = cols[5].text
+						lecture['hakjum'] = cols[6].text[2]
+						lecture['time-room'] = cols[7].text
+						lecture['time'] = get_time(cols[7].text)
+						lecture['room'] = get_room(cols[7].text)
+						
+						lectures.append(lecture)
 				
 				except:
 
