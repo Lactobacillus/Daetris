@@ -2,42 +2,19 @@ import os
 import json
 import pickle
 import random
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template
 
 count = 0
-count_show = 2787
+count_show = 0
 app = Flask(__name__)
 
 with open('2017-1.pickle', 'rb') as f:
 
 	lectures = pickle.load(f)
 
-@app.route('/', methods = ['GET'])
-@app.route('/index', methods = ['GET'])
-def index():
+def randomLecture(lower, upper = 22):
 
-	global count
-	global count_show
-	count += 1
-
-	if request.method == 'GET':
-
-		#string = request.args.get('string', '')
-		#score, msg = scoring(string)
-		string = ''
-		score = ''
-		msg = ''
-
-	return render_template('index.html', cnt = str(count_show))
-
-@app.route('/random', methods = ['GET'])
-def randomLecture():
-
-	global count
-	global count_show
 	global lectures
-	count += 1
-	count_show += 1
 
 	point = 0
 	sel_lectures = list()
@@ -46,7 +23,7 @@ def randomLecture():
 
 	for lec in copy_lectures:
 
-		if point > 17:
+		if point > lower:
 
 			break
 
@@ -58,7 +35,7 @@ def randomLecture():
 
 				temp = temp | set(sel['time'])
 
-			if len(set(lec['time']) & temp) == 0:
+			if len(set(lec['time']) & temp) == 0 and upper >= point + int(lec['hakjum']):
 
 				sel_lectures.append(lec)
 				point = point + int(lec['hakjum'])
@@ -76,7 +53,99 @@ def randomLecture():
 
 				pass
 
-	return render_template('random.html', selected = str(sel_lectures), hakjum = point)
+	return sel_lectures
+
+def makeDrawLecture(req, trial):
+
+	lower = 0
+	candidate = list()
+	similarity = list()
+	day = {'월' : 1, '화' : 2, '수' : 3, '목' : 4, '금' : 5}
+
+	for key in req:
+
+		if int(key[1]) in [1, 2, 5, 6]:
+
+			lower += float(req[key]) * 1.5
+
+		else:
+
+			lower += float(req[key]) * 1
+
+	for idx in range(0, trial):
+
+		candidate.append(randomLecture(int(lower) - 1, int(lower) + 1))
+
+	for cand in candidate:
+
+		times = set()
+
+		for lec in cand:
+
+			point = 0
+
+			for t in lec['time']:
+
+				times = times | {'c' + t[1] + str(day[t[0]])}
+
+		for key in req:
+
+			if int(req[key]) == 1:
+
+				if key in times:
+
+					point += 1
+
+				else:
+
+					point -= 2
+
+			else:
+
+				if key not in times:
+
+					point += 1
+
+				else:
+
+					point -= 2
+
+		similarity.append(point)
+
+	for idx in range(0, trial):
+
+		if similarity[idx] == max(similarity):
+
+			selected = candidate[idx]
+			print(idx)
+
+			break
+
+	print(max(similarity))
+
+	return selected
+
+@app.route('/', methods = ['GET'])
+@app.route('/index', methods = ['GET'])
+def index():
+
+	global count
+	global count_show
+	count += 1
+
+	return render_template('index.html', cnt = str(count_show))
+
+@app.route('/random', methods = ['GET'])
+def randomShow():
+
+	global count
+	global count_show
+	count += 1
+	count_show += 1
+
+	result = randomLecture(17)
+
+	return render_template('random.html', selected = str(result), hakjum = point)
 
 @app.route('/draw', methods = ['GET'])
 def draw():
@@ -104,13 +173,14 @@ def show():
 
 	if request.method == 'POST':
 		
-		if asdf:
+		if len(request.form) == 40:
 
 			# draw 에서 왔을 때
-			return render_template('show.html')
-			return str(request.form['c11'])
+			result = makeDrawLecture(request.form, 500)
 
-		elif sadf:
+			return render_template('show.html', selected = str(result))
+
+		elif len(request.form) == 30:
 
 			# map 에서 왔을 때
 			pass
