@@ -59,6 +59,7 @@ def makeDrawLecture(req, trial):
 
 	lower = 0
 	candidate = list()
+	cand_hakjum = list()
 	similarity = list()
 	day = {'월' : 1, '화' : 2, '수' : 3, '목' : 4, '금' : 5}
 
@@ -76,6 +77,7 @@ def makeDrawLecture(req, trial):
 
 		lecture, hakjum = randomLecture(int(lower) - 1, int(lower) + 1)
 		candidate.append(lecture)
+		cand_hakjum.append(hakjum)
 
 	for cand in candidate:
 
@@ -118,11 +120,11 @@ def makeDrawLecture(req, trial):
 		if similarity[idx] == max(similarity):
 
 			selected = candidate[idx]
-			print(idx)
+			selected_hakjum = cand_hakjum[idx]
 
 			break
 
-	return selected
+	return selected, selected_hakjum
 
 @app.route('/', methods = ['GET'])
 @app.route('/index', methods = ['GET'])
