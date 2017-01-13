@@ -1,6 +1,7 @@
 import os
 import json
 import pickle
+import random
 from flask import Flask, request, render_template, jsonify
 
 count = 0
@@ -30,14 +31,39 @@ def index():
 	return render_template('index.html', cnt = str(count_show))
 
 @app.route('/random', methods = ['GET'])
-def random():
+def randomLecture():
 
 	global count
+	global count_show
+	global lectures
 	count += 1
+	count_show += 1
 
-	#ASDFSADDSAFASDFASD 아직 안짬
+	point = 0
+	sel_lectures = list()
+	copy_lectures = list(lectures)
+	random.shuffle(copy_lectures)
 
-	return render_template('draw.html')
+	for lec in copy_lectures:
+
+		if point > 17:
+
+			break
+
+		else:
+
+			temp = set()
+
+			for sel in sel_lectures:
+
+				temp = temp | set(sel['time'])
+
+			if len(set(lec['time']) & temp) == 0:
+
+				sel_lectures.append(lec)
+				point = point + int(lec['hakjum'])
+
+	return render_template('random.html', selected = str(sel_lectures), hakjum = point)
 
 @app.route('/draw', methods = ['GET'])
 def draw():
