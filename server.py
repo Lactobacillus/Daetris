@@ -53,7 +53,7 @@ def randomLecture(lower, upper = 22):
 
 				pass
 
-	return sel_lectures
+	return sel_lectures, point
 
 def makeDrawLecture(req, trial):
 
@@ -74,7 +74,8 @@ def makeDrawLecture(req, trial):
 
 	for idx in range(0, trial):
 
-		candidate.append(randomLecture(int(lower) - 1, int(lower) + 1))
+		lecture, hakjum = randomLecture(int(lower) - 1, int(lower) + 1)
+		candidate.append(lecture)
 
 	for cand in candidate:
 
@@ -121,8 +122,6 @@ def makeDrawLecture(req, trial):
 
 			break
 
-	print(max(similarity))
-
 	return selected
 
 @app.route('/', methods = ['GET'])
@@ -143,7 +142,7 @@ def randomShow():
 	count += 1
 	count_show += 1
 
-	result = randomLecture(17)
+	result, point = randomLecture(17)
 
 	return render_template('random.html', selected = str(result), hakjum = point)
 
@@ -176,9 +175,9 @@ def show():
 		if len(request.form) == 40:
 
 			# draw 에서 왔을 때
-			result = makeDrawLecture(request.form, 500)
+			result, point = makeDrawLecture(request.form, 500)
 
-			return render_template('show.html', selected = str(result))
+			return render_template('show.html', selected = str(result), hakjum = point)
 
 		elif len(request.form) == 30:
 
