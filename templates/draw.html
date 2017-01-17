@@ -24,12 +24,22 @@
 
       function reset(){
 
+        //var cells = document.getElementsByClassName("cell-sel");
+        //document.getElementsByClassName("cell-sel").value = "0";
+        /*
+        for(var idx in cells){
+
+          cells[idx].className = "cell";
+          cells[idx].value = "0";
+        }
+        */
         for(var i = 1; i <= 8; i++){
 
           for(var j = 1; j<= 5; j++){
 
             var id = 'c' + i + j;
             document.getElementById(id).className = "cell";
+            document.getElementById(id).value = "0";
           }
         }
       }

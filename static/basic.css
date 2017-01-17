@@ -200,6 +200,38 @@ footer address{
   font-size: 13px;
 }
 
+div .room{
+
+  width: 170px;
+  height: 80px;
+  margin: 0px;
+  border: none;
+  outline: none;
+  padding: 0px;
+  text-align: center;
+  color: #FFFFFF;
+  background: #74C2E1;
+  cursor:pointer;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+div .room-sel{
+
+  width: 170px;
+  height: 80px;
+  margin: 0px;
+  border: none;
+  outline: none;
+  padding: 0px;
+  text-align: center;
+  color: #FFFFFF;
+  background: #0191C8;
+  cursor:pointer;
+  vertical-align: middle;
+  display: table-cell;
+}
+
 #buttons{
 
   width: 100%;

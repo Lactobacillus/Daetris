@@ -10,27 +10,28 @@
     <script type="text/javascript">
       function toggle(id) {
 
-        if(document.getElementById(id).className == "cell"){
+        if(document.getElementById(id + "-div").className == "room"){
 
-          document.getElementById(id).className = "cell-sel";
-          document.getElementById(id).value = "1";
+          document.getElementById(id + "-div").className = "room-sel";
+          document.getElementById(id + "-form").value = "1";
         }
         else{
 
-          document.getElementById(id).className = "cell";
-          document.getElementById(id).value = "0";
+          document.getElementById(id + "-div").className = "room";
+          document.getElementById(id + "-form").value = "0";
         }
       }
 
       function reset(){
 
-        for(var i = 1; i <= 8; i++){
+        rooms = document.getElementsByClassName("room-sel");
 
-          for(var j = 1; j<= 5; j++){
+        for(var idx = 0; idx < rooms.length; idx++){
 
-            var id = 'c' + i + j;
-            document.getElementById(id).className = "cell";
-          }
+          var id = rooms[idx].id;
+
+          document.getElementById(id).className = "room";
+          document.getElementById(id.substr(0, id.length - 4) + "-form").value = "0";
         }
       }
     </script>
@@ -67,7 +68,95 @@
     </header>
 
     <div id="mainwrapper">
-      지도에서 건물을 선택하면 그 건물만 다니는 시간표를 만들자
+
+      <div>
+        <table>
+          <tr>
+            <td><div id="CJ법학관-div" onClick="toggle('CJ법학관');" class="room">CJ법학관</div></td>
+            <td><div id="L-P-div" onClick="toggle('L-P');" class="room">L-P</div></td>
+            <td><div id="RnD센터-div" onClick="toggle('RnD센터');" class="room">RnD센터</div></td>
+            <td><div id="공대제1실험관-div" onClick="toggle('공대제1실험관');" class="room">공대제1실험관</div></td>
+          </tr>
+          <tr>
+            <td><div id="공학관-div" onClick="toggle('공학관');" class="room">공학관</div></td>
+            <td><div id="과도관-div" onClick="toggle('과도관');" class="room">과도관</div></td>
+            <td><div id="교양관-div" onClick="toggle('교양관');" class="room">교양관</div></td>
+            <td><div id="교육관-div" onClick="toggle('교육관');" class="room">교육관</div></td>
+          </tr>
+          <tr>
+            <td><div id="국제관-div" onClick="toggle('국제관');" class="room">국제관</div></td>
+            <td><div id="라이시움-div" onClick="toggle('라이시움');" class="room">라이시움</div></td>
+            <td><div id="로봇융합관-div" onClick="toggle('로봇융합관');" class="room">로봇융합관</div></td>
+            <td><div id="미디어관-div" onClick="toggle('미디어관');" class="room">미디어관</div></td>
+          </tr>
+          <tr>
+            <td><div id="미래융합-div" onClick="toggle('미래융합');" class="room">미래융합</div></td>
+            <td><div id="법학관구관-div" onClick="toggle('법학관구관');" class="room">법학관구관</div></td>
+            <td><div id="법학관신관-div" onClick="toggle('법학관신관');" class="room">법학관신관</div></td>
+            <td><div id="법학도서관-div" onClick="toggle('법학도서관');" class="room">법학도서관</div></td>
+          </tr>
+          <tr>
+            <td><div id="사대본관-div" onClick="toggle('사대본관');" class="room">사대본관</div></td>
+            <td><div id="사대신관-div" onClick="toggle('사대신관');" class="room">사대신관</div></td>
+            <td><div id="생명과학관(동관)-div" onClick="toggle('생명과학관(동관)');" class="room">생명과학관(동관)</div></td>
+            <td><div id="생명과학관(서관)-div" onClick="toggle('생명과학관(서관)');" class="room">생명과학관(서관)</div></td>
+          </tr>
+          <tr>
+            <td><div id="서관-div" onClick="toggle('서관');" class="room">서관</div></td>
+            <td><div id="아산이학관-div" onClick="toggle('아산이학관');" class="room">아산이학관</div></td>
+            <td><div id="우정간호학관-div" onClick="toggle('우정간호학관');" class="room">우정간호학관</div></td>
+            <td><div id="의과대학본관-div" onClick="toggle('의과대학본관');" class="room">의과대학본관</div></td>
+          </tr>
+          <tr>
+            <td><div id="정경관-div" onClick="toggle('정경관');" class="room">정경관</div></td>
+            <td><div id="정보통신관-div" onClick="toggle('정보통신관');" class="room">정보통신관</div></td>
+            <td><div id="제1실험관부속건물-div" onClick="toggle('제1실험관부속건물');" class="room">제1실험관부속건물</div></td>
+            <td><div id="창의관-div" onClick="toggle('창의관');" class="room">창의관</div></td>
+          </tr>
+          <tr>
+            <td><div id="하나과학관-div" onClick="toggle('하나과학관');" class="room">하나과학관</div></td>
+            <td><div id="하나스퀘어-div" onClick="toggle('하나스퀘어');" class="room">하나스퀘어</div></td>
+            <td><div id="현차관-div" onClick="toggle('현차관');" class="room">현차관</div></td>
+            <td><div id="홍보관-div" onClick="toggle('홍보관');" class="room">홍보관</div></td>
+          </tr>
+        </table>
+      </div>
+
+      <form id="schedule" method="post" action="/show">
+            <input type="hidden" value="0" id="CJ법학관-form" name="CJ법학관">
+            <input type="hidden" value="0" id="L-P-form" name="L-P">
+            <input type="hidden" value="0" id="RnD센터-form" name="RnD센터">
+            <input type="hidden" value="0" id="공대제1실험관-form" name="공대제1실험관">
+            <input type="hidden" value="0" id="공학관-form" name="공학관">
+            <input type="hidden" value="0" id="과도관-form" name="과도관">
+            <input type="hidden" value="0" id="교양관-form" name="교양관">
+            <input type="hidden" value="0" id="교육관-form" name="교육관">
+            <input type="hidden" value="0" id="국제관-form" name="국제관">
+            <input type="hidden" value="0" id="라이시움-form" name="라이시움">
+            <input type="hidden" value="0" id="로봇융합관-form" name="로봇융합관">
+            <input type="hidden" value="0" id="미디어관-form" name="미디어관">
+            <input type="hidden" value="0" id="미래융합-form" name="미래융합">
+            <input type="hidden" value="0" id="법학관구관-form" name="법학관구관">
+            <input type="hidden" value="0" id="법학관신관-form" name="법학관신관">
+            <input type="hidden" value="0" id="법학도서관-form" name="법학도서관">
+            <input type="hidden" value="0" id="사대본관-form" name="사대본관">
+            <input type="hidden" value="0" id="사대신관-form" name="사대신관">
+            <input type="hidden" value="0" id="생명과학관(동관)-form" name="생명과학관(동관)">
+            <input type="hidden" value="0" id="생명과학관(서관)-form" name="생명과학관(서관)">
+            <input type="hidden" value="0" id="서관-form" name="서관">
+            <input type="hidden" value="0" id="아산이학관-form" name="아산이학관">
+            <input type="hidden" value="0" id="우정간호학관-form" name="우정간호학관">
+            <input type="hidden" value="0" id="의과대학본관-form" name="의과대학본관">
+            <input type="hidden" value="0" id="정경관-form" name="정경관">
+            <input type="hidden" value="0" id="정보통신관-form" name="정보통신관">
+            <input type="hidden" value="0" id="제1실험관부속건물-form" name="제1실험관부속건물">
+            <input type="hidden" value="0" id="창의관-form" name="창의관">
+            <input type="hidden" value="0" id="하나과학관-form" name="하나과학관">
+            <input type="hidden" value="0" id="하나스퀘어-form" name="하나스퀘어">
+            <input type="hidden" value="0" id="현차관-form" name="현차관">
+            <input type="hidden" value="0" id="홍보관-form" name="홍보관">
+      </form>
+
       <div>
         <div id="buttons" class="margin-buttons">
           <input type="submit" method="post" action="/show" form="schedule" value="시간표 만들기" class="control-button"/>

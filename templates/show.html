@@ -140,9 +140,9 @@
       var lectures = {{ selected|safe }};
       var day = {"월":1, "화":2, "수":3, "목":4, "금":5};
 
-      for(var i in lectures){
+      for(var i = 0; i < lectures.length; i++){
 
-        for(var j in lectures[i]["time"]){
+        for(var j = 0; j < lectures[i]["time"].length; j++){
           
           var time = lectures[i]["time"][j];
           var id = "c" + time[1] + day[time[0]];
