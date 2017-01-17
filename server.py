@@ -12,16 +12,32 @@ with open('2017-1.pickle', 'rb') as f:
 
 	lectures = pickle.load(f)
 
-def randomLecture(lower, upper = 22):
+def randomLecture(lower, upper, rooms = None):
 
 	global lectures
 
 	point = 0
-	sel_lectures = list()
-	copy_lectures = list(lectures)
-	random.shuffle(copy_lectures)
+	selected = list()
 
-	for lec in copy_lectures:
+	if rooms == None:
+
+		lec_pool = list(lectures)
+
+	else:
+
+		lec_pool = list()
+
+		for lec in lectures:
+
+			for room in lec['room']:
+
+				if any(r in room for r in rooms):
+
+					lec_pool.append(lec)
+
+	random.shuffle(lec_pool)
+
+	for lec in lec_pool:
 
 		if point > lower:
 
@@ -31,20 +47,20 @@ def randomLecture(lower, upper = 22):
 
 			temp = set()
 
-			for sel in sel_lectures:
+			for sel in selected:
 
 				temp = temp | set(sel['time'])
 
 			if len(set(lec['time']) & temp) == 0 and upper >= point + int(lec['hakjum']):
 
-				sel_lectures.append(lec)
+				selected.append(lec)
 				point = point + int(lec['hakjum'])
 
 				for time in lec['time']:
 
 					if int(time[1:]) > 8 or time[0] == '토':
 
-						sel_lectures.pop()
+						selected.pop()
 						point = point - int(lec['hakjum'])
 
 						break
@@ -53,7 +69,7 @@ def randomLecture(lower, upper = 22):
 
 				pass
 
-	return sel_lectures, point
+	return selected, point
 
 def makeDrawLecture(req, trial):
 
@@ -126,6 +142,20 @@ def makeDrawLecture(req, trial):
 
 	return selected, selected_hakjum
 
+def makeMapLecture(req):
+
+	rooms = list()
+
+	for key in req:
+
+		if int(req[key]) == 1:
+
+			rooms.append(key)
+
+	lecture, hakjum = randomLecture(17, 22, rooms)
+
+	return lecture, hakjum
+
 @app.route('/', methods = ['GET'])
 @app.route('/index', methods = ['GET'])
 def index():
@@ -144,7 +174,7 @@ def randomShow():
 	count += 1
 	count_show += 1
 
-	result, point = randomLecture(17)
+	result, point = randomLecture(17, 22)
 
 	return render_template('random.html', selected = str(result), hakjum = point)
 
@@ -181,10 +211,12 @@ def show():
 
 			return render_template('show.html', selected = str(result), hakjum = point)
 
-		elif len(request.form) == 30:
+		elif len(request.form) == 28:
 
 			# map 에서 왔을 때
-			pass
+			result, point = makeMapLecture(request.form)
+
+			return render_template('show.html', selected = str(result), hakjum = point)
 
 		else:
 
