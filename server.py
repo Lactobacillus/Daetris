@@ -246,13 +246,6 @@ def d3():
 
 	return render_template('d3.html')
 
-@app.route('/rawdata', methods = ['GET'])
-def test(): 
-
-	global lectures
-
-	return str(json.dumps({'data':lectures}, ensure_ascii = False))
-
 if __name__ == '__main__':
 
 	#debug 모드 없애기#############################################

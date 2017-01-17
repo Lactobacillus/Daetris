@@ -108,6 +108,7 @@ footer address{
 #mainwrapper table{
 
   margin: auto;
+  vertical-align: middle;
 }
 
 #show-count h1{
@@ -117,76 +118,56 @@ footer address{
   font-size: 40px;
 }
 
-#tiles .day .label{
+#table .row{
+
+  float: left
+}
+
+#table .label{
 
   width: 120px;
   height: 70px;
-  margin: 0px;
+  margin: 2px;
   border: none;
   outline: none;
   padding: 0px;
   text-align: center;
   color: #FFFFFF;
   background : #005B9A;
+  float: left
 }
 
-#tiles th .label{
+#table .cell{
 
   width: 120px;
   height: 70px;
-  margin: 0px;
+  margin: 2px;
   border: none;
   outline: none;
   padding: 0px;
-  text-align: center;
-  color: #FFFFFF;
-  background : #005B9A;
-}
-
-#tiles .day td{
-
-  width: 120px;
-  height: 70px;
-  margin: 0px;
-  border: none;
-  outline: none;
-  padding: 0px;
-  text-align: center;
-  color: #FFFFFF;
-  background : #005B9A;
-}
-
-#tiles .cell{
-
-  width: 120px;
-  height: 70px;
-  margin: 0px;
-  border: none;
-  outline: none;
-  padding: 0px;
-  text-align: center;
-  color: #74C2E1;
   background: #74C2E1;
   cursor:pointer;
-
+  display: table-cell;
+  word-break:normal;
+  float: left
 }
 
-#tiles .cell-sel{
+#table .cell-sel{
 
   width: 120px;
   height: 70px;
-  margin: 0px;
+  margin: 2px;
   border: none;
   outline: none;
   padding: 0px;
-  text-align: center;
-  color: #0191C8;
   background: #0191C8;
   cursor:pointer;
-
+  display: table-cell;
+  word-break:normal;
+  float: left
 }
 
-#tiles .cell-result{
+div .cell-result{
 
   width: 120px;
   height: 70px;
@@ -198,6 +179,8 @@ footer address{
   color: #FFFFFF;
   background: #0191C8;
   font-size: 13px;
+  display: table-cell;
+  word-break:normal;
 }
 
 div .room{
