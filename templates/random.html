@@ -40,85 +40,80 @@
     <div id="mainwrapper">
       </br>
       </br>
-
-      <form id="schedule">
-        <table id="tiles">
-          <tbody>
-            <tr class="day">
-              <th><div></div></th>
-              <td><input type="text" value="월" class="label"></td>
-              <td><input type="text" value="화" class="label"></td>
-              <td><input type="text" value="수" class="label"></td>
-              <td><input type="text" value="목" class="label"></td>
-              <td><input type="text" value="금" class="label"></td>
-            </tr>
-            <tr>
-              <th><input type="text" value="1교시" class="label"></th>
-              <td><input id="c11" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c12" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c13" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c14" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c15" type="text" value="0" class="cell" readonly></td>
-            </tr>
-            <tr>
-              <th><input type="text" value="2교시" class="label"></th>
-              <td><input id="c21" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c22" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c23" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c24" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c25" type="text" value="0" class="cell" readonly></td>
-            </tr>
-            <tr>
-              <th><input type="text" value="3교시" class="label"></th>
-              <td><input id="c31" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c32" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c33" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c34" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c35" type="text" value="0" class="cell" readonly></td>
-            </tr>
-            <tr>
-              <th><input type="text" value="4교시" class="label"></th>
-              <td><input id="c41" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c42" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c43" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c44" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c45" type="text" value="0" class="cell" readonly></td>
-            </tr>
-            <tr>
-              <th><input type="text" value="5교시" class="label"></th>
-              <td><input id="c51" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c52" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c53" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c54" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c55" type="text" value="0" class="cell" readonly></td>
-            </tr>
-            <tr>
-              <th><input type="text" value="6교시" class="label"></th>
-              <td><input id="c61" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c62" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c63" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c64" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c65" type="text" value="0" class="cell" readonly></td>
-            </tr>
-            <tr>
-              <th><input type="text" value="7교시" class="label"></th>
-              <td><input id="c71" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c72" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c73" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c74" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c75" type="text" value="0" class="cell" readonly></td>
-            </tr>
-            <tr>
-              <th><input type="text" value="8교시" class="label"></th>
-              <td><input id="c81" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c82" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c83" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c84" type="text" value="0" class="cell" readonly></td>
-              <td><input id="c85" type="text" value="0" class="cell" readonly></td>
-            </tr>
-          </tr>
-        </table>
-      </form>
+      <div id="table">
+        <div class="row">
+          <div class="label"></div>
+          <div class="label">월</div>
+          <div class="label">화</div>
+          <div class="label">수</div>
+          <div class="label">목</div>
+          <div class="label">금</div>
+        </div>
+        <div class="row">
+          <div class="label">1교시</div>
+          <div id="c11" class="cell"></div>
+          <div id="c12" class="cell"></div>
+          <div id="c13" class="cell"></div>
+          <div id="c14" class="cell"></div>
+          <div id="c15" class="cell"></div>
+        </div>
+        <div class="row">
+          <div class="label">2교시</div>
+          <div id="c21" class="cell"></div>
+          <div id="c22" class="cell"></div>
+          <div id="c23" class="cell"></div>
+          <div id="c24" class="cell"></div>
+          <div id="c25" class="cell"></div>
+        </div>
+        <div class="row">
+          <div class="label">3교시</div>
+          <div id="c31" class="cell"></div>
+          <div id="c32" class="cell"></div>
+          <div id="c33" class="cell"></div>
+          <div id="c34" class="cell"></div>
+          <div id="c35" class="cell"></div>
+        </div>
+        <div class="row">
+          <div class="label">4교시</div>
+          <div id="c41" class="cell"></div>
+          <div id="c42" class="cell"></div>
+          <div id="c43" class="cell"></div>
+          <div id="c44" class="cell"></div>
+          <div id="c45" class="cell"></div>
+        </div>
+        <div class="row">
+          <div class="label">5교시</div>
+          <div id="c51" class="cell"></div>
+          <div id="c52" class="cell"></div>
+          <div id="c53" class="cell"></div>
+          <div id="c54" class="cell"></div>
+          <div id="c55" class="cell"></div>
+        </div>
+        <div class="row">
+          <div class="label">6교시</div>
+          <div id="c61" class="cell"></div>
+          <div id="c62" class="cell"></div>
+          <div id="c63" class="cell"></div>
+          <div id="c64" class="cell"></div>
+          <div id="c65" class="cell"></div>
+        </div>
+        <div class="row">
+          <div class="label">7교시</div>
+          <div id="c71" class="cell"></div>
+          <div id="c72" class="cell"></div>
+          <div id="c73" class="cell"></div>
+          <div id="c74" class="cell"></div>
+          <div id="c75" class="cell"></div>
+        </div>
+        <div class="row">
+          <div class="label">8교시</div>
+          <div id="c81" class="cell"></div>
+          <div id="c82" class="cell"></div>
+          <div id="c83" class="cell"></div>
+          <div id="c84" class="cell"></div>
+          <div id="c85" class="cell"></div>
+        </div>
+      </div>
 
       <div>
         <div id="buttons" class="margin-buttons">
@@ -139,18 +134,19 @@
       var lectures = {{ selected|safe }};
       var day = {"월":1, "화":2, "수":3, "목":4, "금":5};
 
-      for(var i in lectures){
+      for(var i = 0; i < lectures.length; i++){
 
-        for(var j in lectures[i]["time"]){
+        for(var j = 0; j < lectures[i]["time"].length; j++){
           
           var time = lectures[i]["time"][j];
           var id = "c" + time[1] + day[time[0]];
 
           document.getElementById(id).className = "cell-result";
-          document.getElementById(id).value = lectures[i]["name"];
+          document.getElementById(id).innerHTML = lectures[i]["name"];
         }
       }
     </script>
+
 
 </body>
 </html>

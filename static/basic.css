@@ -167,11 +167,11 @@ footer address{
   float: left
 }
 
-div .cell-result{
+#table .cell-result{
 
   width: 120px;
   height: 70px;
-  margin: 0px;
+  margin: 2px;
   border: none;
   outline: none;
   padding: 0px;
@@ -181,6 +181,7 @@ div .cell-result{
   font-size: 13px;
   display: table-cell;
   word-break:normal;
+  float: left
 }
 
 div .room{
