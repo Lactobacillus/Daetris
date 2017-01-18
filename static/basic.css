@@ -101,14 +101,9 @@ footer address{
 #mainwrapper{
 
   width: 60%;
-  overflow: auto;
+  height: 800px;
+  overflow: scroll;
   margin: auto;
-}
-
-#mainwrapper table{
-
-  margin: auto;
-  vertical-align: middle;
 }
 
 #show-count h1{
