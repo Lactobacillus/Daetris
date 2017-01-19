@@ -9,6 +9,13 @@ from flask import Flask, request, render_template
 db.create_all()
 db.session.commit()
 
+visitor = Visitor(0)
+db.session.add(visitor)
+db.session.commit()
+visitor = Visitor(0)
+db.session.add(visitor)
+db.session.commit()
+
 with open('2017-1.pickle', 'rb') as f:
 
 	lectures = pickle.load(f)
