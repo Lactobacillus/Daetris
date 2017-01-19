@@ -4,6 +4,7 @@ import pickle
 import random
 from app import app
 from visitor import Visitor, db
+from flask import Flask, request, render_template
 
 db.create_all()
 db.session.commit()
