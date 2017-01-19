@@ -25,10 +25,11 @@
       function reset(){
 
         rooms = document.getElementsByClassName("room-sel");
+        var len = rooms.length;
 
-        for(var idx = 0; idx < rooms.length; idx++){
+        for(var idx = 0; idx < len; idx++){
 
-          var id = rooms[idx].id;
+          var id = rooms[0].id;
 
           document.getElementById(id).className = "room";
           document.getElementById(id.substr(0, id.length - 4) + "-form").value = "0";
