@@ -1,5 +1,5 @@
 from flask.ext.sqlalchemy import SQLAlchemy
-from server import app
+from app import app
 db = SQLAlchemy(app)
 
 class Visitor(db.Model):

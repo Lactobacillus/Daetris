@@ -2,7 +2,7 @@ import os
 import json
 import pickle
 import random
-from server import app
+from app import app
 from visitor import Visitor
 
 db.create_all()
