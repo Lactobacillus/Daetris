@@ -16,8 +16,8 @@ with open('2017-1.pickle', 'rb') as f:
 class Visitor(db.Model):
 
 	__tablename__ = 'traffic'
-	id = db.Column(db.Interger, primary_key = True)
-	count = db.Column(db.Interger)
+	id = db.Column(db.Integer, primary_key = True)
+	count = db.Column(db.Integer)
 
 	def __init__(self, visitor):
 
