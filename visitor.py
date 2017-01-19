@@ -14,4 +14,4 @@ class Visitor(db.Model):
 
 	def __repr__(self):
 
-		return '<visitor %r>' % self.visitor
+		return '<visitor %r>' % self.count
