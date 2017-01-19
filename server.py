@@ -49,7 +49,7 @@ def randomLecture(lower, upper, rooms = None):
 				else:
 
 					pass
-					
+
 	random.shuffle(lec_pool)
 
 	for lec in lec_pool:
@@ -256,20 +256,7 @@ def about():
 
 	return render_template('about.html')
 
-@app.route('/traffic', methods = ['GET'])
-def traffic():
-
-	global visitor
-
-	return '모든 page 에 대한 접근 : ' + str(visitor) + ' 회'
-
-@app.route('/d3', methods = ['GET'])
-def d3():
-
-	return render_template('d3.html')
-
 if __name__ == '__main__':
 
-	#debug 모드 없애기#############################################
 	port = int(os.environ.get('PORT', 5000))
 	app.run(host = '0.0.0.0', port = port, debug = True)

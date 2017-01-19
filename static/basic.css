@@ -88,6 +88,11 @@ header .remain-title{
   text-align: center;
 }
 
+#text{
+
+  text-align: left;
+}
+
 #show-count h1{
 
   text-align: center;
@@ -122,6 +127,7 @@ header .remain-title{
   color: #FFFFFF;
   background : #005B9A;
   float: left;
+  line-height: 70px;
 }
 
 #table .cell{
@@ -156,21 +162,21 @@ header .remain-title{
 
 #table .cell-result{
 
-  width: 120px;
-  height: 70px;
+  width: 114px;
+  height: 64px;
   margin: 2px;
   border: none;
   outline: none;
-  padding: 0px;
+  padding: 3px;
   text-align: center;
   color: #FFFFFF;
   background: #0191C8;
   font-size: 13px;
   display: table-cell;
-  word-break:normal;
+  word-break: normal;
   float: left;
   vertical-align: middle;
-  line-height: 70px;
+
 }
 
 #table .room{
@@ -213,6 +219,7 @@ header .remain-title{
 
   width: 100%;
   margin: auto;
+  cursor: pointer;
   text-align: center;
 }
 
