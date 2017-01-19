@@ -2,32 +2,15 @@ import os
 import json
 import pickle
 import random
-from flask import Flask, request, render_template
-from flask.ext.sqlalchemy import SQLAlchemy
+from server import app
+from visitor import Visitor
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL'] 
-db = SQLAlchemy(app)
 db.create_all()
 db.session.commit()
 
 with open('2017-1.pickle', 'rb') as f:
 
 	lectures = pickle.load(f)
-
-class Visitor(db.Model):
-
-	__tablename__ = 'visitor'
-	id = db.Column(db.Integer, primary_key = True)
-	count = db.Column(db.Integer)
-
-	def __init__(self, visitor):
-
-		self.count = count
-
-	def __repr__(self):
-
-		return '<visitor %r>' % self.visitor
 
 def randomLecture(lower, upper, rooms = None):
 
