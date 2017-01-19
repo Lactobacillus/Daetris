@@ -202,7 +202,7 @@ header .remain-title{
   text-align: center;
   color: #FFFFFF;
   background: #0191C8;
-  cursor:pointer;
+  cursor: pointer;
   vertical-align: middle;
   display: table-cell;
   float: left;
@@ -226,6 +226,7 @@ header .remain-title{
   padding: 0px;
   font-size: 25px;
   text-align: center;
+  cursor: pointer;
   color: #0191C8;
   background: #FFFFFF;
 }
@@ -240,6 +241,7 @@ header .remain-title{
   padding: 0px;
   font-size: 25px;
   text-align: center;
+  cursor: pointer;
   color: #0191C8;
   background: #FFFFFF;
 }

@@ -38,6 +38,18 @@ def randomLecture(lower, upper, rooms = None):
 
 					lec_pool.append(lec)
 
+				elif '생명과학관' in room and '동관' in room and '생명과학관 동관' in rooms:
+
+					lec_pool.append(lec)
+
+				elif '생명과학관' in room and '서관' in room and '생명과학관 서관' in rooms:
+
+					lec_pool.append(lec)
+
+				else:
+
+					pass
+					
 	random.shuffle(lec_pool)
 
 	for lec in lec_pool:
@@ -154,6 +166,20 @@ def makeMapLecture(req):
 		if int(req[key]) == 1:
 
 			rooms.append(key)
+
+		elif '생명과학관' in key:
+
+			if '동관' in key:
+
+				rooms.append('생명과학관 동관')
+
+			if '서관' in key:
+
+				rooms.append('생명과학관 서관')
+
+		else:
+
+			pass
 
 	lecture, hakjum = randomLecture(17, 22, rooms)
 
