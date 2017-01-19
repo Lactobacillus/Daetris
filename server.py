@@ -185,7 +185,7 @@ def index():
 
 	visitor = Visitor.query.get(1 )
 
-	return render_template('index.html', cnt = str(visitor))
+	return render_template('index.html', cnt = str(visitor.count))
 
 @app.route('/random', methods = ['GET'])
 def randomShow():
@@ -193,10 +193,6 @@ def randomShow():
 	visitor = Visitor.query.get(1)
 	visitor.count += 1
 	db.session.commit()
-
-	with open('visitor.pickle', 'wb') as f:
-
-		pickle.dump(visitor, f)
 
 	result, point = randomLecture(17, 22)
 
@@ -218,10 +214,6 @@ def show():
 	visitor = Visitor.query.get(1)
 	visitor.count += 1
 	db.session.commit()
-
-	with open('visitor.pickle', 'wb') as f:
-
-		pickle.dump(visitor, f)
 
 	if request.method == 'POST':
 		
