@@ -163,15 +163,15 @@ def makeMapLecture(req):
 
 			rooms.append(key)
 
-		elif '생명과학관' in key:
+			 if '생명과학관' in key:
 
-			if '동관' in key:
+				if '동관' in key:
 
-				rooms.append('생명과학관 동관')
+					rooms.append('생명과학관 동관')
 
-			if '서관' in key:
+				if '서관' in key:
 
-				rooms.append('생명과학관 서관')
+					rooms.append('생명과학관 서관')
 
 		else:
 
