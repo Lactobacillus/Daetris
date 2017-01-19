@@ -3,17 +3,29 @@ import json
 import pickle
 import random
 from flask import Flask, request, render_template
+from flask.ext.sqlalchemy import SQLAlchemy
 
-visitor = 0
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL'] 
+db = SQLAlchemy(app)
 
 with open('2017-1.pickle', 'rb') as f:
 
 	lectures = pickle.load(f)
 
-with open('visitor.pickle', 'rb') as f:
+class Visitor(db.Model):
 
-	visitor = pickle.load(f)
+	__tablename__ = 'traffic'
+	id = db.Column(db.Interger, primary_key = True)
+	count = db.Column(db.Interger)
+
+	def __init__(self, visitor):
+
+		self.count = count
+
+	def __repr__(self):
+
+		return '<visitor %r>' % self.visitor
 
 def randomLecture(lower, upper, rooms = None):
 
@@ -185,15 +197,16 @@ def makeMapLecture(req):
 @app.route('/index', methods = ['GET'])
 def index():
 
-	global visitor
+	visitor = Visitor.query.get(0)
 
 	return render_template('index.html', cnt = str(visitor))
 
 @app.route('/random', methods = ['GET'])
 def randomShow():
 
-	global visitor
-	visitor += 1
+	visitor = Visitor.query.get(1)
+	visitor.count += 1
+	db.session.commit()
 
 	with open('visitor.pickle', 'wb') as f:
 
@@ -216,8 +229,9 @@ def map():
 @app.route('/show', methods = ['GET', 'POST'])
 def show():
 
-	global visitor
-	visitor += 1
+	visitor = Visitor.query.get(1)
+	visitor.count += 1
+	db.session.commit()
 
 	with open('visitor.pickle', 'wb') as f:
 
@@ -256,3 +270,9 @@ if __name__ == '__main__':
 
 	port = int(os.environ.get('PORT', 5000))
 	app.run(host = '0.0.0.0', port = port, debug = True)
+
+	if Visitor.query.count() == 0:
+
+		visitor = Visitor(0)
+		db.session.add(visitor)
+		db.session.commit()
