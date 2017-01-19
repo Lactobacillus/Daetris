@@ -4,13 +4,16 @@ import pickle
 import random
 from flask import Flask, request, render_template
 
-count = 0
-count_show = 0
+visitor = 0
 app = Flask(__name__)
 
 with open('2017-1.pickle', 'rb') as f:
 
 	lectures = pickle.load(f)
+
+with open('visitor.pickle', 'rb') as f:
+
+	visitor = pickle.load(f)
 
 def randomLecture(lower, upper, rooms = None):
 
@@ -160,19 +163,19 @@ def makeMapLecture(req):
 @app.route('/index', methods = ['GET'])
 def index():
 
-	global count
-	global count_show
-	count += 1
+	global visitor
 
-	return render_template('index.html', cnt = str(count_show))
+	return render_template('index.html', cnt = str(visitor))
 
 @app.route('/random', methods = ['GET'])
 def randomShow():
 
-	global count
-	global count_show
-	count += 1
-	count_show += 1
+	global visitor
+	visitor += 1
+
+	with open('visitor.pickle', 'wb') as f:
+
+		pickle.dump(visitor, f)
 
 	result, point = randomLecture(17, 22)
 
@@ -181,26 +184,22 @@ def randomShow():
 @app.route('/draw', methods = ['GET'])
 def draw():
 
-	global count
-	count += 1
-
 	return render_template('draw.html')
 
 @app.route('/map', methods = ['GET'])
 def map():
-
-	global count
-	count += 1
 
 	return render_template('map.html')
 
 @app.route('/show', methods = ['GET', 'POST'])
 def show():
 
-	global count
-	global count_show
-	count += 1
-	count_show += 1
+	global visitor
+	visitor += 1
+
+	with open('visitor.pickle', 'wb') as f:
+
+		pickle.dump(visitor, f)
 
 	if request.method == 'POST':
 		
@@ -229,17 +228,14 @@ def show():
 @app.route('/about', methods = ['GET'])
 def about():
 
-	global count
-	count += 1
-
 	return render_template('about.html')
 
 @app.route('/traffic', methods = ['GET'])
 def traffic():
 
-	global count
+	global visitor
 
-	return '모든 page 에 대한 접근 : ' + str(count) + ' 회'
+	return '모든 page 에 대한 접근 : ' + str(visitor) + ' 회'
 
 @app.route('/d3', methods = ['GET'])
 def d3():
