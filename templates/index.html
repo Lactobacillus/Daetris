@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>:: Daetris ::</title>
 
+    <link rel="shortcut icon" href="{{ url_for('static', filename = 'favicon.png') }}">
     <link href = "{{ url_for('static', filename = 'basic.css') }}" rel = "stylesheet" type = "text/css">
 
     <style>
@@ -30,16 +31,18 @@
 
     <div id="mainwrapper">
       <div>
-        </br>
-        </br>
+        <img id="logo" src="{{ url_for('static', filename = 'DAETRIS.png') }}">
+        <div id="text-index">
+          대트리스와 함께 기가막힌 시간표를 만들어보세요!</br>
+        </div>
         <div id="show-count">
+          </br>
+          </br>
+          </br>
           <h1>지금까지 {{ cnt }} 명이 시간표를 막 짰습니다!</h1>
         </div>
         </br>
-        </br>
-        <div id="text">
-          여기다가 뭐라 설명을 해야할 것 같은데
-        </div>
+
       </div>
     </div>
 
