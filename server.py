@@ -163,7 +163,7 @@ def makeMapLecture(req):
 
 			rooms.append(key)
 
-		 	if '생명과학관' in key:
+			if '생명과학관' in key:
 
 				if '동관' in key:
 
