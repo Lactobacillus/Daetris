@@ -3,7 +3,7 @@ import json
 import pickle
 import random
 from app import app
-from visitor import Visitor
+from visitor import Visitor, db
 
 db.create_all()
 db.session.commit()
