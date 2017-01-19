@@ -38,17 +38,13 @@ def randomLecture(lower, upper, rooms = None):
 
 					lec_pool.append(lec)
 
-				elif '생명과학관' in room and '동관' in room and '생명과학관 동관' in rooms:
+				if '생명과학관' in room and '동관' in room and '생명과학관 동관' in rooms:
 
 					lec_pool.append(lec)
 
-				elif '생명과학관' in room and '서관' in room and '생명과학관 서관' in rooms:
+				if '생명과학관' in room and '서관' in room and '생명과학관 서관' in rooms:
 
 					lec_pool.append(lec)
-
-				else:
-
-					pass
 
 	random.shuffle(lec_pool)
 
