@@ -9,13 +9,6 @@ from flask import Flask, request, render_template
 db.create_all()
 db.session.commit()
 
-visitor = Visitor(0)
-db.session.add(visitor)
-db.session.commit()
-visitor = Visitor(0)
-db.session.add(visitor)
-db.session.commit()
-
 with open('2017-1.pickle', 'rb') as f:
 
 	lectures = pickle.load(f)
@@ -190,7 +183,7 @@ def makeMapLecture(req):
 @app.route('/index', methods = ['GET'])
 def index():
 
-	visitor = Visitor.query.get(0)
+	visitor = Visitor.query.get(1 )
 
 	return render_template('index.html', cnt = str(visitor))
 
