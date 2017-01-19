@@ -15,7 +15,7 @@ with open('2017-1.pickle', 'rb') as f:
 
 class Visitor(db.Model):
 
-	__tablename__ = 'traffic'
+	__tablename__ = 'visitor'
 	id = db.Column(db.Integer, primary_key = True)
 	count = db.Column(db.Integer)
 
