@@ -16,7 +16,7 @@ body {
   background-repeat: no-repeat repeat-y;
   background-size: cover;
   overflow: auto;
-  margin: 0;
+  margin: auto;
 }
 
 header{
@@ -81,10 +81,11 @@ header .remain-title{
 
 #mainwrapper{
 
-  width: 800px;
+  width: 744px;
   overflow: auto;
   margin: auto;
   padding-bottom: 75px;
+  text-align: center;
 }
 
 #show-count h1{
@@ -96,7 +97,7 @@ header .remain-title{
 
 #table{
 
-  width: 750px;
+  width: 744px;
   height: 680px;
   margin: auto;
   text-align: center;
@@ -120,7 +121,7 @@ header .remain-title{
   text-align: center;
   color: #FFFFFF;
   background : #005B9A;
-  float: left
+  float: left;
 }
 
 #table .cell{
@@ -135,7 +136,7 @@ header .remain-title{
   cursor:pointer;
   display: table-cell;
   word-break:normal;
-  float: left
+  float: left;
 }
 
 #table .cell-sel{
@@ -150,7 +151,7 @@ header .remain-title{
   cursor:pointer;
   display: table-cell;
   word-break:normal;
-  float: left
+  float: left;
 }
 
 #table .cell-result{
@@ -167,14 +168,16 @@ header .remain-title{
   font-size: 13px;
   display: table-cell;
   word-break:normal;
-  float: left
+  float: left;
+  vertical-align: middle;
+  line-height: 70px;
 }
 
-div .room{
+#table .room{
 
-  width: 170px;
+  width: 182px;
   height: 80px;
-  margin: 0px;
+  margin: 2px;
   border: none;
   outline: none;
   padding: 0px;
@@ -184,13 +187,15 @@ div .room{
   cursor:pointer;
   vertical-align: middle;
   display: table-cell;
+  float: left;
+  line-height: 80px;
 }
 
-div .room-sel{
+#table .room-sel{
 
-  width: 170px;
+  width: 182px;
   height: 80px;
-  margin: 0px;
+  margin: 2px;
   border: none;
   outline: none;
   padding: 0px;
@@ -200,16 +205,14 @@ div .room-sel{
   cursor:pointer;
   vertical-align: middle;
   display: table-cell;
+  float: left;
+  line-height: 80px;
 }
 
 #buttons{
 
   width: 100%;
   margin: auto;
-}
-
-.margin-buttons{
-
   text-align: center;
 }
 
@@ -253,7 +256,6 @@ footer{
   padding: 0px;
   padding-top: 5px;
   position: fixed;
-
 }
 
 footer h3{
@@ -270,11 +272,4 @@ footer address{
   margin: 5px;
   font-size: 15px;
   color: #FFFFFF;
-}
-
-@media screen and (max-width:800px) {
-header h1{
-
-  font-size: 30px;
-  padding-top: 150px;
 }
