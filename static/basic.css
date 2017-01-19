@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 * {
   font-family: "Nanum-Gothic", sans-serif;\
@@ -21,10 +22,11 @@ body {
 header{
 
   width: 100%;
-  height: 65px;
+  height: 70px;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
   background-color: #00BCD4;
-  padding-top: 0px;
-  padding-bottom: 10px;
   overflow: hidden;
   margin: auto;
 }
@@ -32,71 +34,49 @@ header{
 header #in-header{
 
   width: 800px;
+  height: 70px;
   margin: auto;
+  text-align: center;
+  display: table;
+  vertical-align: middle;
 }
 
 header .main-title{
 
-  float: left;
-  margin-top: 5px;
-  width: 250px;
+  width: 200px;
+  height: 60px;
+  text-align: center;
+  margin: 5px;
+  font-size: 45px;
+  font-weight: bold;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 header .sub-title{
 
-  float: left;
-  margin-top: 33px;
-  width: 90px;
-}
-
-header h1{
-
+  width: 100px;
+  height: 60px;
   text-align: center;
-  margin: auto;
-  font-size: 45px;
+  margin: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Noto Sans KR', sans-serif;
   color: #FFFFFF;
   cursor: pointer;
+  display: table-cell;
+  vertical-align: middle;
 }
 
-header h2{
+header .remain-title{
 
+  width: 200px;
+  height: 60px;
   text-align: center;
-  margin: auto;
-  font-size: 20px;
-  color: #FFFFFF;
-  cursor: pointer;
-}
-
-footer{
-
-  width: 100%;
-  background-color: #00bcd4;
-  background-attachment: scroll;
-  background-position: 0% 0%;
-  bottom: 0;
-  padding-top: 10px;
-  padding-bottom: 0px;
-  position: fixed;
-
-}
-
-footer h3{
-
-  text-align: center;
-  margin: auto;
-  margin-top: 5px;
-  font-size: 20px;
-  color: #FFFFFF;
-}
-
-footer address{
-
-  text-align: center;
-  margin: auto;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 15px;
-  color: #FFFFFF;
+  margin: 5px;
 }
 
 #mainwrapper{
@@ -259,6 +239,37 @@ div .room-sel{
   text-align: center;
   color: #0191C8;
   background: #FFFFFF;
+}
+
+footer{
+
+  width: 100%;
+  height: 70px;
+  background-color: #00bcd4;
+  background-attachment: scroll;
+  background-position: 0% 0%;
+  bottom: 0;
+  margin: 0px;
+  padding: 0px;
+  padding-top: 5px;
+  position: fixed;
+
+}
+
+footer h3{
+
+  text-align: center;
+  margin: 5px;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+footer address{
+
+  text-align: center;
+  margin: 5px;
+  font-size: 15px;
+  color: #FFFFFF;
 }
 
 @media screen and (max-width:800px) {
