@@ -108,5 +108,5 @@ if __name__ == '__main__':
 	# run in linux
 	htmls = get_htmls('urlList.txt')
 	lectures = get_lectures(htmls)
-	save('2016-2.pickle', lectures)
+	save('2017-2.pickle', lectures)
 	print(len(lectures))
